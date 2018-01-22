@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="../css/ModeAdmin.css">
+		
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<title>pageAccueuilAdmin</title>
   		<meta charset="utf-8"/>
 	</head>
@@ -16,14 +19,30 @@
 		</nav>
 
 		<section>
-			<div>
-				<div class="onglets">
-					<div class="focus onglet"><a href="admin.html">1</a></div>
-					<div class="pasfocus onglet"><a href="admin2.html">2</a></div>
-					<div class="pasfocus onglet"><a href="admin3.html">3</a></div>
-				</div>
-				<div class="contenu">
-					Contenu de 1
+			<div class="container">
+				<ul class="nav nav-pills">
+    				<li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+				    <li><a data-toggle="pill" href="#menu1">Créer une Soirée</a></li>
+				    <li><a data-toggle="pill" href="#menu2">Consulter les Soirées</a></li>
+				    <li><a data-toggle="pill" href="#menu3">Historique des Soirées</a></li>
+				</ul>
+				<div class="tab-content">
+					<div id="home" class="tab-pane fade in active">
+				    	<h3>HOME</h3>
+				    	<p>ICI C'EST LE CHTI MENU</p>
+				    </div>
+				    <div id="menu1" class="tab-pane fade">
+				    	<h3>Menu 1</h3>
+				    	<p>ICI ON CREE DES SOIREES</p>
+				    </div>
+				    <div id="menu2" class="tab-pane fade">
+				    	<h3>Menu 2</h3>
+				    	<p>POUR CONSULTER LES SOIREES PASSEE, C'EST ICI</p>
+				    </div>
+				    <div id="menu3" class="tab-pane fade">
+				    	<h3>Menu 3</h3>
+				    	<p>NTM</p>
+				    </div>
 				</div>
 			</div>
 		</section>
