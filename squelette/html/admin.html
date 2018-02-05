@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-social.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-		<title>Trésorock - Admin</title>
+		<script type="text/javascript" src="../js/else.js"></script>
+		<title>Trésorock - Accueil</title>
   		<meta charset="utf-8"/>
 	</head>
 
-	<body style="background-color: white">
-		<header>
-			<h1><center>TRÉSOROCK</center></h1>	
-			<hr size=300>
-		<section class="">
-			<div class="container col-sm-6 col-sm-push-3">
+	<body onload="startTime();" class="bg-secondary">
+		<div>
+			<h1 class="text-center text-white">TRÉSOROCK</h1>
+			<h3 class="text-center text-white">Bienvenue sur la trésorerie du Rock'HEI !</h3>	
+		</div>	
+		<div class="text-center center-block">
+			<div class="container col-sm-6 col-sm-push-3 text-center center-block">
 				<ul class="nav nav-pills">
-    				<li class="active"><a data-toggle="pill" href="#home">Accueil Admin</a></li>
-				    <li><a data-toggle="pill" href="#menu1">Créer une Soirée</a></li>
-				    <li><a data-toggle="pill" href="#menu2">Consulter les Soirées</a></li>
-				    <li><a data-toggle="pill" href="#menu3">Historique des Soirées</a></li>
+    				<li class="active text-center center-block"><a data-toggle="pill" href="#home">Accueil Admin</a></li>
+				    <li class="text-center center-block"><a data-toggle="pill" href="#menu1">Créer une Soirée</a></li>
+				    <li class="text-center center-block"><a data-toggle="pill" href="#menu2">Consulter les Soirées</a></li>
+				    <li class="text-center center-block"><a data-toggle="pill" href="#menu3">Historique des Soirées</a></li>
 				</ul>
-				<div class="tab-content">
+				<div class="tab-content text-center center-block">
 					<div id="home" class="tab-pane fade in active">
 				    	<h3>MODE ADMIN</h3>
 				    	<p>ICI C'EST LE CHTI MENU</p>
@@ -41,16 +44,17 @@
 				  
 				</div>
 			</div>
-		</section>
+		</div>
 
-		<footer class="fixed-bottom">
-			<div style="padding-bottom: 10px; background-color:white">
-		<hr>			
-			<center>
-			© Copyright<br> 
-			Ce site a été réalisé par : Gaëtan Deschamps & Clément Georjon<br> 
-			2017-2018
-			</center>
+		<footer class="center-block text-center fixed-bottom">
+			<div style="padding-bottom: 10px;" class="bg-light">
+				<hr>
+				© Copyright<br> 
+				Site Web réalisé par : Gaëtan Deschamps & Clément Georjon<br> 
+				2018
+				<a class="btn btn-social-icon center-block" href="https://www.facebook.com/rock.hei.lille">
+    			<i class="fa fa-facebook"></i>
+  				</a>
 			</div>
 		</footer>
 	</body>
