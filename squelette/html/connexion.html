@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap-social.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/connexion.css">
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/else.js"></script>
@@ -13,28 +14,28 @@
 	</head>
 	<body onload="startTime();" class="bg-info"> <!--démarrage de l'heure au chargement de la page-->
 		
-		<div id="txt" style="font-size:150px; color: white; margin-left: 0.5em;" ></div>
-		<div id="date" style="font-size:150px; color: white; margin-left: 0.5em;"></div>
+		<div id="txt"></div>
+		<div id="date"></div>
 
 		<div>
 			<h1 class="text-center text-white">TRÉSOROCK</h1>
 			<h3 class="text-center text-white">Bonjour Admin, veuillez vous connecter.</h3>	
 		</div>
-		<a href="accueil.html"><img src="../../images/accueil.png" class="rounded float-right" style="width: 4%; margin-right: 100px; margin-top: -100px"></a>
+		<a href="accueil.html"><img src="../../images/accueil.png" class="rounded float-right" id="logoRock"></a>
 
 		<form>
-  				<div class="class=form-group center-block" style="width: 20%; padding-bottom: 20px; padding-top: 40px;">
+  				<div class="class=form-group center-block" id="login">
    					<label for="login"><h4>Login</h5></label>
    					<input type="email" class="form-control" placeholder="Entrer login" required>
   				</div>
- 				<div class="form-group center-block" style="width: 20%;">
+ 				<div class="form-group center-block" id="password">
     				<label for="login"><h4>Mot de Passe</h4></label>
     				<input type="password" class="form-control" placeholder="Mot de Passe" required>
   				</div>
   				<button type="submit" class="btn btn-dark center-block">Submit</button>
 		</form>
 		<footer class="center-block text-center navbar-fixed-bottom">
-			<div style="padding-bottom: 2px;" class="bg-light">
+			<div id="footer" class="bg-light">
 				<hr>
 				© Copyright<br> 
 				Site Web réalisé par : Gaëtan Deschamps & Clément Georjon<br> 

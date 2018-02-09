@@ -19,7 +19,7 @@ function startTime()
     document.getElementById('txt').innerHTML =  "<h3>"+h + ":" + m + ":" + s + " " +"</h3>";    
     var t = setTimeout(startTime, 1000);  // rappel de la fonction toutes les secondes
     
-}
+};
 
 function checkTime(i) 
 {
@@ -28,4 +28,24 @@ function checkTime(i)
         i = "0" + i ;  // ajout d'un zéro devant les nombres < 10
     }
     return i;
-}
+};
+
+function TypeFormulaireTEA(button)
+{
+ var message;
+ if(button.value=="membre")
+ {
+    message="Formulaire d'un membre";
+ }
+ if(button.value=="inscription")
+ {
+    message="Formulaire d'inscription";
+ }
+ if (button.value=="ancienMembre") 
+ {
+    message="Formulaire Ancien Membre"
+ }
+ var typeFormulaire=document.getElementById('formulaireClient');
+ typeFormulaire.innerHTML=message;
+};
+

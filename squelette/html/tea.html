@@ -4,6 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap-social.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/tea.css">
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/else.js"></script>
@@ -12,26 +13,26 @@
 	</head>
 
 	<body onload="startTime();" class="bg-info">
-		<div id="txt" style="font-size:150px; color: white; margin-left: 0.5em;" ></div>
-		<div id="date" style="font-size:150px; color: white; margin-left: 0.5em;"></div>
-		<img class="fixed-left" src="../../images/logorockheinoir.png" style="width: 20%; margin-top: 50px;">
+		<div id="txt"></div>
+		<div id="date"></div>
+		<img class="fixed-left" src="../../images/logorockheinoir.png">
 
 		<div>
-			<h1 class="text-center text-white" style="margin-top: -10em">TRÉSOROCK - TEA</h1>
+			<h1 class="text-center text-white" id="titre">TRÉSOROCK - TEA</h1>
 		</div>	
 		
 
-		<a href="accueil.html"><img src="../../images/accueil.png" class="rounded float-right" style="width: 4%; margin-right: 100px; margin-top: -100px"></a>
+		<a href="accueil.html"><img src="../../images/accueil.png" class="rounded float-right" id="logoRock"></a>
 
 		<div>
 			<div class="container col-sm-6 col-sm-push-3">
-				<ul class="nav nav-pills" style="margin-top: 1em;">
+				<ul class="nav nav-pills" id="ongletTEA">
     				<li class="active text-center center-block"><a data-toggle="pill" href="#home" class="text-dark">Accueil TEA</a></li>
 				    <li class="text-center center-block text-white"><a data-toggle="pill" href="#menu1" class="text-dark">NORMAL</a></li>
 				    <li class="text-center center-block"><a data-toggle="pill" href="#menu2" class="text-dark">ABONNÉ</a></li>
 				</ul>
 
-				<div class="tab-content text-white" style="margin-top: 4em; padding: px">
+				<div class="tab-content text-white" id="reglesTEA">
 					<div id="home" class="tab-pane fade in active">
 				    	<h3>MODE TEA</h3>
 				    	<p>Pour ajouter ou sélectionner un client non abonné, cliquez l'onglet dédié.</p>				    	
@@ -39,23 +40,33 @@
 				    </div>
 				    <div id="menu1" class="tab-pane fade">
 				    	<h3>MODE TEA</h3>
-				    	<p>ICI ON CREE DES SOIREES</p>
+				    	<form>
+				    		<select class="form-control">
+				    			<option value="1">Deschamps</option>
+				    			<option value="2">Georjo</option>
+				    		</select>
+				    	</form>
 				    </div>
 				    <div id="menu2" class="tab-pane fade">
 				    	<h3>MODE TEA</h3>
-				    	<p>POUR CONSULTER LES SOIREES PASSEE, C'EST ICI</p>
+				    	<form>
+				    		<div class="btn-group center-block text-center" role="group" aria-label="Basic example">
+				    		<center>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this)" value="membre">Déjà Membre</button>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this)" value="inscription">Inscription</button>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this)" value="ancienMembre">Ancien Membre Commission</button>
+							</div>
+							</center>	
+							<div id="formulaireClient" class="center-block text-center"></div>
+						</form>	
 				    </div>
-				    <div id="menu3" class="tab-pane fade">
-				    	<h3>MODE TEA</h3>
-				    	<p>NTM</p>
-				    </div>
-				  
+				    				  
 				</div>
 			</div>
 		</div>
 
 		<footer class="center-block text-center fixed-bottom">
-			<div style="padding-bottom: 10px;" class="bg-light">
+			<div id="footer" class="bg-light">
 				<hr>
 				© Copyright<br> 
 				Site Web réalisé par : Gaëtan Deschamps & Clément Georjon<br> 

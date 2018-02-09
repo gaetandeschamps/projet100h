@@ -1,0 +1,33 @@
+#txt{
+	font-size:150px; 
+	color: white; 
+	margin-left: 0.5em;
+}
+#date{
+	font-size:150px; 
+	color: white; 
+	margin-left: 0.5em;
+}
+.fixed-left{
+	width: 20%; 
+	margin-top: 50px;
+}
+#titre{
+	margin-top: -10em;
+}
+#logoRock {
+	width: 4%; 
+	margin-right: 100px; 
+	margin-top: -100px;
+}
+#login{
+	width: 20%; 
+	padding-bottom: 20px; 
+	padding-top: 40px;
+}
+#password{
+	width: 20%;
+}
+#footer{
+	style="padding-bottom: 10px;
+}
