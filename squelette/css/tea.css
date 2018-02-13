@@ -38,7 +38,19 @@
 	padding:20px;
 	font-size: 20px;
 }
+#cotisant2{
+	display: none;
+	padding:20px;
+	font-size: 20px;
+}
+#couple2{
+	padding:20px;
+	font-size: 20px;
+}
 #valider{
+	padding-top: 30px;
+}
+#valider2{
 	padding-top: 30px;
 }
 #menu1 h3{

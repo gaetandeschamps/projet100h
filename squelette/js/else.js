@@ -32,18 +32,28 @@ function checkTime(i)
 
 function TypeFormulaireTEA(button)
 {
- var message;
+ var prix;
+ var titre;
  if(button.value=="membre")
  {
-    message="Formulaire d'un membre";
+    titre = document.getElementById("titreForm");
+    titre.innerHTML = "<i>MODE TEA - Formulaire Abonné Membre</i>";
+    prix = document.getElementById("montant2");
+    prix.value="0.00 €";
  }
  if(button.value=="inscription")
  {
-    message="Formulaire d'inscription";
+    titre = document.getElementById("titreForm");
+    titre.innerHTML = "<i>MODE TEA - Formulaire d'Inscription Abonné</i>";
+    prix = document.getElementById("montant2");
+    prix.value="20.00 €";
  }
  if (button.value=="ancienMembre") 
  {
-    message="Formulaire Ancien Membre"
+    titre = document.getElementById("titreForm");
+    titre.innerHTML = "<i>MODE TEA - Formulaire Ancien Membre</i>";
+    prix = document.getElementById("montant2");
+    prix.value="15.00 €";
  }
  var typeFormulaire=document.getElementById('formulaireClient');
  typeFormulaire.innerHTML=message;
@@ -73,6 +83,15 @@ function NouveauClientNormal(input){
 
 };
 
+function NouveauClientNormal2(input){
+    if (input.value=="HEI") {
+        document.getElementById("cotisant2").style.display = "inline";
+    } else if(input.value!="HEI"){
+        document.getElementById("cotisant2").style.display= "none";
+    }
+
+};
+
 function PrixAPayer(){
     var txt;
     if(document.getElementById("Couple").checked){
@@ -81,9 +100,13 @@ function PrixAPayer(){
         }else if(document.getElementById("seul").checked){
         txt=document.getElementById("montant");
         txt.value="2.00 €";
-    }
+        }
 };
 
 function ValiderNormal(){
+    alert("Merci ! Votre entrée a été enregistrée.");
+};
+
+function ValiderAboné(){
     alert("Merci ! Votre entrée a été enregistrée.");
 };
