@@ -75,13 +75,19 @@
 #suite7{
 	display:none;
 	padding-top: 4em;
-	padding-bottom: 10em;
+	padding-bottom: 8em;
 }
 #span{
 	font-weight: bold;
 }
-#labelRecette{
-	font-size: 15px;
+#labelCaisse{
+	margin-top: 10px;
+}
+#recetteCaisse{
+	width: 50%;
+}
+#recetteTotale{
+	width: 40%;
 }
 #formulaireCreation{
 	display: block;

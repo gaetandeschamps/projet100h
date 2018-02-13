@@ -63,3 +63,27 @@ function CreerEvenement(){
 function OnClick(){
     alert("Merci, votre évènement est créé.");
 };
+
+function NouveauClientNormal(input){
+    if (input.value=="HEI") {
+        document.getElementById("cotisant").style.display = "inline";
+    } else if(input.value!="HEI"){
+        document.getElementById("cotisant").style.display= "none";
+    }
+
+};
+
+function PrixAPayer(){
+    var txt;
+    if(document.getElementById("Couple").checked){
+        txt = document.getElementById("montant");
+        txt.value="1.50 €";
+        }else if(document.getElementById("seul").checked){
+        txt=document.getElementById("montant");
+        txt.value="2.00 €";
+    }
+};
+
+function ValiderNormal(){
+    alert("Merci ! Votre entrée a été enregistrée.");
+};
