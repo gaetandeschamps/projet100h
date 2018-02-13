@@ -49,3 +49,14 @@ function TypeFormulaireTEA(button)
  typeFormulaire.innerHTML=message;
 };
 
+function CreerEvenement(){
+        document.getElementById("suite").style.display = "block";
+        document.getElementById("suite2").style.display = "block";
+        document.getElementById("suite3").style.display = "block";
+        document.getElementById("suite4").style.display = "block";
+        document.getElementById("suite5").style.display = "block";
+        document.getElementById("suite6").style.display = "block";
+        document.getElementById("suite7").style.display = "block";
+
+}
+

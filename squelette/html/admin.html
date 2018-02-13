@@ -40,13 +40,42 @@
 				    <div id="menu1" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
 				    	<center>
-				    	<div class="form-group row center-block">
-					 	 <label for="example-date-input" class="col-2 col-form-label">Date</label>
-					 	 <div class="col-10">
-					 	 <input class="form-control" type="date" id="example-date-input">
-					  	</div>
-					  	</center>
+					    	<form id="formulaireCreation" class="input-group center-block text-center">	
+						    	<div class="input-group">
+							 	    <span class="input-group-addon">Date</span>
+							 		<input class="form-control" type="date" id="example-date-input" onchange="CreerEvenement();">
+							  	</div>
+							  	<div class="input-group col-lg-offset-4" id="suite">
+								    <span class="input-group-addon" id="span">Recette Caisse</span>
+								    <input type="number" class="form-control" placeholder="0.00 €">
+								</div>
+								<div class="input-group" id="suite2">
+								    <span class="input-group-addon" id="span">Recette Totale</span>
+								    <input type="number" class="form-control" placeholder="0.00 €">
+								</div>
+								<div class="input-group" id="suite3">
+								    <span class="input-group-addon" id="span">Erreur Caisse</span>
+								    <input type="number" class="form-control" placeholder="0.00 €">
+								</div>
+								<div class="input-group" id="suite4">
+								    <span class="input-group-addon" id="span">Nombre de personnes venues à l'évènement</span>
+								    <input type="number" class="form-control" placeholder="0 personnes">
+								</div>
+								<div class="input-group" id="suite5">
+								    <span class="input-group-addon" id="span">Nombre d'abonnés venus à l'évènement</span>
+								    <input type="number" class="form-control" placeholder="0 abonnés">
+								</div>
+								<div class="input-group" id="suite6">
+								    <span class="input-group-addon" id="span">Thème de l'évènement</span>
+								    <input type="text" class="form-control" placeholder="Thème...">
+								</div>
+								<div id="suite7">
+									<p>Afin de finaliser l'évènement, des données doivent être rentrées par les TEA.</p>
+								</div>
+						</center>
+					  	</form>
 				    </div>
+
 				    <div id="menu2" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
 				    	<p>Pour consulter les soirées passées, merci de cliquer sur la date souhaitée.</p>
@@ -72,13 +101,11 @@
 				</div>
 			</div>
 		</div>
-
-		<footer class="center-block text-center fixed-bottom">
+	
+		<footer class="blockquote-footer fixed-bottom text-center" style="padding-top: 10em;">
 			<div id="footer" class="bg-light">
 				<hr>
-				© Copyright<br> 
-				Site Web réalisé par : Gaëtan Deschamps & Clément Georjon<br> 
-				2018
+				Site Web réalisé par : Gaëtan Deschamps & Clément Georjon - © Copyright
 				<a class="btn btn-social-icon center-block" href="https://www.facebook.com/rock.hei.lille">
     			<i class="fa fa-facebook"></i>
   				</a>
