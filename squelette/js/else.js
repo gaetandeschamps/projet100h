@@ -58,5 +58,8 @@ function CreerEvenement(){
         document.getElementById("suite6").style.display = "block";
         document.getElementById("suite7").style.display = "block";
 
-}
+};
 
+function OnClick(){
+    alert("Merci, votre évènement est créé.");
+};
