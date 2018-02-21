@@ -16,15 +16,17 @@ public class ModeAdmin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(req.getServletContext());
-        templateResolver.setPrefix("/session/");
-        templateResolver.setSuffix(".html");
+        if (req.getSession().getAttribute("adminConnecte").equals("login")) {
+            ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(req.getServletContext());
+            templateResolver.setPrefix("/session/");
+            templateResolver.setSuffix(".html");
 
-        WebContext context = new WebContext(req,resp,req.getServletContext());
+            WebContext context = new WebContext(req, resp, req.getServletContext());
 
-        TemplateEngine templateEngine = new TemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver);
+            TemplateEngine templateEngine = new TemplateEngine();
+            templateEngine.setTemplateResolver(templateResolver);
 
-        templateEngine.process("admin", context, resp.getWriter());
+            templateEngine.process("admin", context, resp.getWriter());
+        }
     }
 }

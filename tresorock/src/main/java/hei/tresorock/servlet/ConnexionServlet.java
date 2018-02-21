@@ -33,13 +33,12 @@ public class ConnexionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         if(login.equals("admin") && password.equals("admin")){
             req.getSession().setAttribute("adminConnecte","login");
         }else{
-            //req.setAttribute("error","Identification Echouée. Vérifier login et mot de passe.");
+
         }
         resp.sendRedirect("session/admin");
     }
