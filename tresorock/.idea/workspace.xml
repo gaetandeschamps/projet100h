@@ -50,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/session/admin.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="780">
@@ -60,12 +60,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
               <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1519228542837" expanded="true" signature="46686:46728" ph="..." />
+                <marker date="1519228542837" expanded="true" signature="46686:46746" ph="..." />
+                <marker date="1519228542837" expanded="true" signature="46686:46759" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -537,12 +541,12 @@
       <updated>1518559157041</updated>
       <workItem from="1518559158668" duration="23000" />
       <workItem from="1518559235729" duration="3047000" />
-      <workItem from="1519119758116" duration="12856000" />
+      <workItem from="1519119758116" duration="13211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15926000" />
+    <option name="totallyTimeSpent" value="16281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -810,18 +814,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/session/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="38" lean-forward="true" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <marker date="1519228542837" expanded="true" signature="46686:46728" ph="..." />
+            <marker date="1519228542837" expanded="true" signature="46686:46746" ph="..." />
+            <marker date="1519228542837" expanded="true" signature="46686:46759" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/session/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="38" lean-forward="true" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
           <folding />
         </state>
       </provider>
