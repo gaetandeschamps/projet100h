@@ -10,14 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-@WebServlet("/connexionAdmin")
-public class ConnexionServlet extends HttpServlet {
+@WebServlet("/Econnexion")
+public class ConnexionEchec extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(req.getServletContext());
         templateResolver.setPrefix("/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
@@ -27,20 +25,6 @@ public class ConnexionServlet extends HttpServlet {
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
 
-        templateEngine.process("connexion", context, resp.getWriter());
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
-        String login = req.getParameter("login");
-        String password = req.getParameter("password");
-        if(login.equals("admin") && password.equals("admin")){
-            req.getSession().setAttribute("adminConnecte","login");
-        }else{
-            //req.setAttribute("error","Identification Echouée. Vérifier login et mot de passe.");
-        }
-        resp.sendRedirect("session/admin");
+        templateEngine.process("connexionEchec", context, resp.getWriter());
     }
 }
