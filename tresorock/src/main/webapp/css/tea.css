@@ -1,3 +1,16 @@
+@font-face {
+	font-family: 'Geometria-Light';
+	src: url('../fonts/Geometria-Light.otf');
+}
+*{
+	font-family: "Geometria-Light";
+}
+#tresorock{
+	font-family:"Geometria-Light";
+	font-size: 6em;
+}
+
+
 #txt{
 	font-size:150px; 
 	color: white; 
@@ -57,5 +70,5 @@
 	padding-bottom: 20px;
 }
 #footer{
-	style="padding-bottom: 10px;
+	style:"padding-bottom: 10px";
 }

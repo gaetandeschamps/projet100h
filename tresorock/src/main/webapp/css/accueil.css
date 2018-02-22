@@ -1,9 +1,16 @@
 @font-face {
-	font-family: 'CODEbold';
-	src: url('../fonts/CODEbold.otf');
-	src: url('../fonts/Typolino.ttf') format('opentype');
-
+	font-family: 'Geometria-Light';
+	src: url('../fonts/Geometria-Light.otf');
 }
+*{
+	font-family: "Geometria-Light";
+}
+#tresorock{
+	font-family:"Geometria-Light";
+	font-size: 6em;
+}
+
+
 #txt{
 	font-size:150px; 
 	color: white; 
