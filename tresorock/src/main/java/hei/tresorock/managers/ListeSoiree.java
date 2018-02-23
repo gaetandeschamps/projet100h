@@ -31,7 +31,7 @@ public class ListeSoiree {
     }
 
 
-    public Soiree getFilm(Integer idSoiree) {
+    public Soiree getSoiree(Integer idSoiree) {
         return soireeList.get(idSoiree);
     }
 
