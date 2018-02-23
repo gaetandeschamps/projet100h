@@ -1,5 +1,7 @@
 package hei.tresorock.servlet;
 
+import hei.tresorock.entities.Soiree;
+import hei.tresorock.managers.ListeSoiree;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/session/admin")
 public class ModeAdmin extends HttpServlet {
@@ -22,6 +25,8 @@ public class ModeAdmin extends HttpServlet {
             templateResolver.setSuffix(".html");
 
             WebContext context = new WebContext(req, resp, req.getServletContext());
+            List<Soiree> listeSoiree = ListeSoiree.getInstance().soireeList();
+            context.setVariable("soireeList", listeSoiree);
 
             TemplateEngine templateEngine = new TemplateEngine();
             templateEngine.setTemplateResolver(templateResolver);

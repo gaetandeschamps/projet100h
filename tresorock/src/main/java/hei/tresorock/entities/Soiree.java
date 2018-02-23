@@ -4,12 +4,14 @@ import java.time.LocalDate;
 
 public class Soiree {
 
+    private Integer idSoiree;
     private LocalDate dateSoiree;
     private Double recetteCaisse;
     private String  themeSoiree;
 
-    public Soiree(LocalDate dateSoiree, Double recetteCaisse, String themeSoiree){
+    public Soiree(Integer idSoiree, LocalDate dateSoiree, Double recetteCaisse, String themeSoiree){
         super();
+        this.idSoiree = idSoiree;
         this.dateSoiree = dateSoiree;
         this.recetteCaisse = recetteCaisse;
         this.themeSoiree = themeSoiree;
@@ -32,5 +34,13 @@ public class Soiree {
 
     public String getThemeSoiree() {
         return themeSoiree;
+    }
+
+    public Integer getId() {
+        return idSoiree;
+    }
+
+    public void setId(Integer id) {
+        this.idSoiree = id;
     }
 }

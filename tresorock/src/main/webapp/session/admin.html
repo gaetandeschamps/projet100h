@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap-social.css"/>
@@ -44,12 +44,12 @@
 				    	<center>
 					    	<form method="post" id="formulaireCreation" class="input-group center-block text-center">
 						    	<div class="input-group">
-							 	    <span class="input-group-addon">Date</span>
-							 		<input class="form-control" type="date" id="example-date-input" onchange="CreerEvenement();">
+							 	    <span class="input-group-addon" for="dateSoiree">Date</span>
+							 		<input class="form-control" type="date" name="dateSoiree" id="example-date-input" onchange="CreerEvenement();">
 							  	</div>
 							  	<div class="input-group col-lg-offset-4" id="suite">
-								    <span class="input-group-addon" id="span">Recette Caisse</span>
-								    <input type="number" class="form-control" placeholder="0.00 €">
+								    <span class="input-group-addon" id="span" for="recetteCaisse">Recette Caisse</span>
+								    <input type="number" class="form-control" placeholder="0.00 €" name="recetteCaisse">
 								</div>
 								<div class="input-group" id="suite2">
 								    <span class="input-group-addon" id="span">Recette Totale</span>
@@ -68,11 +68,11 @@
 								    <input type="number" class="form-control" placeholder="0 abonnés">
 								</div>
 								<div class="input-group" id="suite6">
-								    <span class="input-group-addon" id="span">Thème de l'évènement</span>
-								    <input type="text" class="form-control" placeholder="Thème...">
+								    <span class="input-group-addon" id="span" for="themeSoiree">Thème de l'évènement</span>
+								    <input type="text" class="form-control" placeholder="Thème..." name="themeSoiree">
 								</div>
 								<div id="suite7">
-									<button type="submit" class="btn btn-dark center-block" id="btnValider" onclick="OnClick()">Finaliser</button>
+									<button href="addSoiree"type="submit" class="btn btn-dark center-block" id="btnValider" onclick="OnClick()">Finaliser</button>
 								</div>
 								
 						</center>
@@ -84,17 +84,14 @@
 				    	<p>Pour consulter les soirées passées, merci de cliquer sur la date souhaitée.</p>
 				    	<select class="custom-select" size="10"> 
 				    		<!--rajouter lien sur chacune des dates avec boutons modifier/supprimer-->
-						  <option selected>Soirée du 07/02/18</option>
-						  <option value="1">Soirée du 31/01/18</option>
-						  <option value="2">Soirée du 24/01/18</option>
-						  <option value="3">Soirée du 17/01/18</option>
-						  <option value="4">Soirée du 10/01/18</option>
-						  <option value="5">Soirée du 13/12/17</option>
-						  <option value="6">Soirée du 06/12/17</option>
-						  <option value="7">Soirée du 29/11/17</option>
-						  <option value="8">Soirée du 22/11/17</option>
-						  <option value="9">Soirée du 15/11/17</option>
-						  <option value="10">Soirée du 08/11/17</option>
+							<option th:each="listSoiree: ${soireeList}"></option>
+							<option value="1" th:text="${}">Soirée du 31/01/18</option>
+							<option value="2">Soirée du 27/11/17</option>
+							<option value="3">Soirée du 11/11/17</option>
+							<option value="4">Soirée du 29/10/17</option>
+							<option value="5">Soirée du 15/09/17</option>
+
+
 						</select>
 				    </div>
 				    <div id="menu3" class="tab-pane fade">
