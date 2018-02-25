@@ -1,45 +1,86 @@
 package hei.tresorock.entities;
 
+/**
+ * Classe définissant les différents paramètres/caractéristiques d'un client participant à une soirée.
+ * @author gaetandeschamps, clementgeorjon
+ */
 public class Client {
 
     private Integer idClient;
-    private String nom;
-    private String prenom;
-    private String ecole;
-    private boolean cotisant;
-    private String type;
+    private String nomClient;
+    private String prenomClient;
+    private String ecoleClient;
+    private boolean cotisantClient;
+    private String typeClient;
 
-    public Client(Integer id, String n, String p, String e, boolean c, String t){
+    /**
+     * Méthode permettant d'accéder aux infos d'un participant.
+     *
+     * @param idClient       -
+     * @param nomClient      -
+     * @param prenomClient   -
+     * @param ecoleClient    -
+     * @param cotisantClient -
+     * @param typeClient     -
+     */
+    public Client(Integer idClient, String nomClient, String prenomClient, String ecoleClient, boolean cotisantClient, String typeClient) {
         super();
-        this.idClient = id;
-        this.nom = n;
-        this.prenom = p;
-        this.ecole = e;
-        this.cotisant = c;
-        this.type = t;
+        this.idClient = idClient;
+        this.nomClient = nomClient;
+        this.prenomClient = prenomClient;
+        this.ecoleClient = ecoleClient;
+        this.cotisantClient = cotisantClient;
+        this.typeClient = typeClient;
     }
 
-    public Integer getIdClient() { return idClient; }
+    public Integer getIdClient() {
+        return idClient;
+    }
 
-    public void setIdClient(Integer idClient) { this.idClient = idClient; }
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
+    }
 
-    public String getNom() { return nom; }
+    public String getNomClient() {
+        return nomClient;
+    }
 
-    public void setNom(String nom) { this.nom = nom; }
+    public void setNomClient(String nomClient) {
+        this.nomClient = nomClient;
+    }
 
-    public String getPrenom() { return prenom; }
+    public String getPrenomClient() {
+        return prenomClient;
+    }
 
-    public void setPrenom(String prenom) { this.prenom = prenom; }
+    public void setPrenomClient(String prenomClient) {
+        this.prenomClient = prenomClient;
+    }
 
-    public String getEcole() { return ecole; }
+    public String getEcoleClient() {
+        return ecoleClient;
+    }
 
-    public void setEcole(String ecole) { this.ecole = ecole; }
+    public void setEcoleClient(String ecoleClient) {
+        this.ecoleClient = ecoleClient;
+    }
 
-    public boolean isCotisant() { return cotisant; }
+    public boolean isCotisantClient() {
+        return cotisantClient;
+    }
 
-    public void setCotisant(boolean cotisant) { this.cotisant = cotisant; }
+    public void setCotisantClient(boolean cotisantClient) {
+        this.cotisantClient = cotisantClient;
+    }
 
-    public String getType() { return type; }
+    public String getTypeClient() {
+        return typeClient;
+    }
 
-    public void setType(String type) { this.type = type; }
+    public void setTypeClient(String typeClient) {
+        this.typeClient = typeClient;
+    }
 }
+
+
+

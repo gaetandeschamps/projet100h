@@ -11,8 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Classe permettant d'accéder à la partie TEA du site.
+ * Ne nécessite aucune session privée au préalable.
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebServlet("/TEA")
 public class ModeTEA extends HttpServlet {
+    /**
+     * Méthode doGET qui permet d'afficher le template tea, lorsque le bon URL est actif.
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(req.getServletContext());

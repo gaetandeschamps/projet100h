@@ -5,6 +5,10 @@ import javax.servlet.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Classe permettant le bon affichage des caractères spéciaux du site.
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebFilter(filterName = "EncodingFilter")
 
 public class EncodingFilter implements Filter {

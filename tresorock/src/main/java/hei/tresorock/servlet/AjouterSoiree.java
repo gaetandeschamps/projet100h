@@ -16,8 +16,20 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * Classe permettant d'ajouter une soirée dans la base de données.
+ * Le formulaire est associé à la page ADMIN, qui, lorsqu'il le valide, ajoute une ligne dans la base de données
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebServlet("/session/addSoiree")
 public class AjouterSoiree extends HttpServlet {
+    /**
+     * méthode permettant d'exécuter le template d'ajout de soirée en allant le chercher dans le bon répertoire.
+     * @param req
+     * @param resp -
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -35,6 +47,13 @@ public class AjouterSoiree extends HttpServlet {
         }
     }
 
+    /**
+     * Méthode doPost qui permet de soumettre le formulaire et ainsi d'envoyer les donnés.
+     * @param req - permet de récuperer les données entrées dans le formulaire
+     * @param resp - permet d'envoyer toutes ces données pour créer une nouvelle soirée dans la bdd.
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

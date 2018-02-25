@@ -12,9 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Classe permettant d'afficher la template Connexion.
+ * Cette page permet de se connecter à la partie (et donc à toutes les fonctionnalités d'ADMIN du site via un mot de passe et un login.
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebServlet("/connexionAdmin")
 public class ConnexionServlet extends HttpServlet {
-
+    /**
+     * méthode doGET qui afficher le templates en allant le chercher dans le bon répertoire.
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -31,6 +42,14 @@ public class ConnexionServlet extends HttpServlet {
 
     }
 
+    /**
+     * Méthode doPost qui récupère les entrées de l'utilisateur et qui les compares avec les login/mot de passe autorisés.
+     * @see hei.tresorock.filters.LoginFilter
+     * @param req - permet de récuperer les données entrées dans le formulaire de connexion
+     * @param resp - permet d'envoyer toutes les données pour se connecter.
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");

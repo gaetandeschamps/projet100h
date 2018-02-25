@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Classe permettant d'afficher la template Accueil.
+ * Cette page est lancée lorsque l'on se connecte au site (c'est la page d'accueil).
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebServlet("/accueil")
 public class AccueilServlet extends HttpServlet {
 

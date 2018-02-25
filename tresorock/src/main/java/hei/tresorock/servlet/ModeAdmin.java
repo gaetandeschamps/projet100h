@@ -14,8 +14,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Classe permettant d'accéder à la partie ADMIN du site en se connectant.
+ * @author gaetandeschamps, clementgeorjon
+ */
 @WebServlet("/session/admin")
 public class ModeAdmin extends HttpServlet {
+    /**
+     * Méthode doGET qui permet d'afficher le template admin, seulement si la connexion est active.
+     * A savoir, un login et un mot de passe corrects et actifs entrés dans le formulaire et connexion et contrôlé par cette classe.
+     * @see ConnexionServlet
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

@@ -8,12 +8,23 @@ import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
 
+/**
+ * Classe regroupant la liste de toutes les soirées créées et présentes dans la base de données.
+ * @author gaetandeschamps, clementgeorjon
+ */
 public class ListeSoiree {
 
+    /**
+     * Méthode qui crée la liste de toutes les soirées.
+     */
     private static class ListeSoireeHolder {
         private final static ListeSoiree instance = new ListeSoiree();
     }
 
+    /**
+     * Méthode pour récupérer l'instance.
+     * @return - récupère l'instance de la liste des soirées.
+     */
     public static ListeSoiree getInstance() {
         return ListeSoireeHolder.instance;
     }
@@ -30,12 +41,20 @@ public class ListeSoiree {
         return new ArrayList<>(soireeList.values());
     }
 
-
+    /**
+     * Méthode servant à récupérer une soirée en particulier grâce à son id.
+     * @param idSoiree - identifiant unique donné à chaque soirée permettant de choisir celle sur laquelle on veut travailler.
+     * @return - id de la soirée
+     */
     public Soiree getSoiree(Integer idSoiree) {
         return soireeList.get(idSoiree);
     }
 
-
+    /**
+     * Méthode permettant d'ajouter une nouvelle soirée à la liste de soirées créées auparavant.
+     * @param soiree - nouvelle soirée à ajouter
+     * @return - la soirée nouvellement ajoutée.
+     */
     public Soiree addSoiree(Soiree soiree) {
         Integer idSoiree = soireeList.lastKey() + 1;
         soiree.setId(idSoiree);
@@ -44,7 +63,9 @@ public class ListeSoiree {
     }
 
 
-
+    /**
+     * Méthode simulant une base de données en attendant de connecter la "vraie".
+     */
     private void initialize() {
 
         soireeList = new TreeMap<>();
