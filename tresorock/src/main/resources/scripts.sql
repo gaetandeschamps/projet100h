@@ -1,4 +1,4 @@
-CREATE TABLE Client (Nom char(20), Prenom char(20), Ecole char(20),  Cotisant Boolean, Statut Char(20)); /*Constructeur Table Client*/
+CREATE TABLE Client (Nom char(20), Prenom char(20), Ecole char(20),  Cotisant Boolean, Statut Char(20)); /*Constructeur Table ClientDao*/
 
 INSERT INTO Client (Nom, Prenom, Ecole, Cotisant, Statut) VALUES
 ('Sidonie', 'Frédéric', 'HEI', False, 'Normal'),
