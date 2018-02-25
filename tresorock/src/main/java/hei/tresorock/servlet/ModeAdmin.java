@@ -25,13 +25,17 @@ public class ModeAdmin extends HttpServlet {
             templateResolver.setSuffix(".html");
 
             WebContext context = new WebContext(req, resp, req.getServletContext());
-            List<Soiree> listeSoiree = ListeSoiree.getInstance().soireeList();
-            context.setVariable("soireeList", listeSoiree);
 
             TemplateEngine templateEngine = new TemplateEngine();
             templateEngine.setTemplateResolver(templateResolver);
 
             templateEngine.process("admin", context, resp.getWriter());
         }
+        WebContext context = new WebContext(req, resp, req.getServletContext());
+
+        String soireeId = req.getParameter("idSoiree");
+        Soiree soiree = ListeSoiree.getInstance().getSoiree(Integer.parseInt(soireeId));
+        context.setVariable("soiree", soiree);
+
     }
 }
