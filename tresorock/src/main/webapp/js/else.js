@@ -102,10 +102,12 @@ function PrixAPayer(){
         }
 };
 
-function ValiderNormal(){
-    alert("Merci ! Votre entrée a été enregistrée.");
-};
-
-function ValiderAboné(){
+/**
+ * Cette méthode permet d'enregistrer dans la BDD les données entrées par le TEA après complétion du formulaire et clic sur le bouton de validation
+ * @constructor
+ */
+function Valider(){
+    // Variable du formulaire : nomClient, prenomClient, ecoleClient, optRadioCotisant,optRadioSeulCouple
+    insertClient(nomClient, prenomClient, ecoleClient, optRadioCotisant, optRadioSeulCouple);
     alert("Merci ! Votre entrée a été enregistrée.");
 };
