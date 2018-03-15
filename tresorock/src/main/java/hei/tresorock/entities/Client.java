@@ -11,7 +11,7 @@ public class Client {
     private String prenomClient;
     private String ecoleClient;
     private boolean cotisantClient;
-    private String typeClient;
+    private String statutClient;
 
     /**
      * Méthode permettant d'accéder aux infos d'un participant.
@@ -21,16 +21,16 @@ public class Client {
      * @param prenomClient   -
      * @param ecoleClient    -
      * @param cotisantClient -
-     * @param typeClient     -
+     * @param statutClient   -
      */
-    public Client(Integer idClient, String nomClient, String prenomClient, String ecoleClient, boolean cotisantClient, String typeClient) {
+    public Client(Integer idClient, String nomClient, String prenomClient, String ecoleClient, boolean cotisantClient, String statutClient) {
         super();
         this.idClient = idClient;
         this.nomClient = nomClient;
         this.prenomClient = prenomClient;
         this.ecoleClient = ecoleClient;
         this.cotisantClient = cotisantClient;
-        this.typeClient = typeClient;
+        this.statutClient = statutClient;
     }
 
     public Integer getIdClient() {
@@ -74,11 +74,11 @@ public class Client {
     }
 
     public String getTypeClient() {
-        return typeClient;
+        return statutClient ;
     }
 
     public void setTypeClient(String typeClient) {
-        this.typeClient = typeClient;
+        this.statutClient = statutClient;
     }
 }
 
