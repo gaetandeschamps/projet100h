@@ -1,6 +1,6 @@
-package hei.tresorock.DAO.communication_BDD;
+package hei.tresorock.dao.DataBaseCommunication;
 
-import hei.tresorock.DAO.ClientDao;
+import hei.tresorock.dao.ClientDao;
 import hei.tresorock.entities.Client;
 
 import java.sql.Connection;
@@ -21,17 +21,17 @@ public class ClientDaoImpl implements ClientDao{
      */
     @Override
     public List<Client> listClient() {
-        String query = "SELECT * FROM Client ORDER BY IdClient";
+        String query = "SELECT * FROM client ORDER BY idClient";
         List<Client> listOfClients = new ArrayList<>();
         try (
-                Connection connection = DataSourceProvider.getDataSource().getConnection();
+                Connection connection = DataBaseProvider.getdataBase().getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query)
         ) {
             while (resultSet.next()) {
                 listOfClients.add(
                         new Client(
-                                resultSet.getInt("IdClient"),
+                                resultSet.getInt("idClient"),
                                 resultSet.getString("Nom"),
                                 resultSet.getString("Prenom"),
                                 resultSet.getString("Ecole"),

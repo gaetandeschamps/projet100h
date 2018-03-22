@@ -1,4 +1,4 @@
-package hei.tresorock.DAO;
+package hei.tresorock.dao;
 
 import hei.tresorock.entities.Soiree;
 
