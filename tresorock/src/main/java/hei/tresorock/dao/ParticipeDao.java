@@ -8,7 +8,7 @@ public interface ParticipeDao {
 
         public List<Participe> listParticipe();
 
-        public Participe getParticipe(Integer idClient, Integer idSoiree);
+        public Participe getParticipe(Integer idParticipe);
 
         public Participe addParticipe (Participe participe);
 }
