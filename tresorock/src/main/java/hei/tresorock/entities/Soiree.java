@@ -72,7 +72,7 @@ public class Soiree {
      * Méthode récupérant l'identifiant unique d'une soriée.
      * @return - identifiant de la soirée
      */
-    public Integer getId() {
+    public Integer getIdSoiree() {
         return idSoiree;
     }
 
@@ -80,7 +80,7 @@ public class Soiree {
      * Méthode permettant de définir l'identifiant unique d'une soriée.
      * @return - date de la soirée
      */
-    public void setId(Integer id) {
+    public void setIdSoiree(Integer id) {
         this.idSoiree = id;
     }
 }

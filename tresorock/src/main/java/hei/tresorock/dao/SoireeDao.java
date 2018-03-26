@@ -10,5 +10,5 @@ public interface SoireeDao {
 
         public Soiree getSoiree(Integer idSoiree);
 
-        public Soiree addSoriee(Soiree soiree);
+        public Soiree addSoiree(Soiree soiree);
 }

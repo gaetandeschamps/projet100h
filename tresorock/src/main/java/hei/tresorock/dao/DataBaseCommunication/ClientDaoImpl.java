@@ -3,10 +3,7 @@ package hei.tresorock.dao.DataBaseCommunication;
 import hei.tresorock.dao.ClientDao;
 import hei.tresorock.entities.Client;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class ClientDaoImpl implements ClientDao{
      */
     @Override
     public List<Client> listClient() {
-        String query = "SELECT * FROM client ORDER BY idClient";
+        String query = "SELECT * FROM Client ORDER BY Nom";
         List<Client> listOfClients = new ArrayList<>();
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
@@ -49,13 +46,58 @@ public class ClientDaoImpl implements ClientDao{
     /**
      * Cette méthode retourne un objet Client correpsondant à l'IdClient passé en paramètre
      * @param idClient du client recherché
-     * @return un objet Client
+     * @return null
      */
     @Override
-    public Client getClient(Integer idClient) { return null; }
+    public Client getClient(Integer idClient) {
+        String query = "SELECT * FROM Client WHERE idClient=?";
+        try (Connection connection = DataBaseProvider.getdataBase().getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, idClient);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return new Client(
+                            resultSet.getInt("idClient"),
+                            resultSet.getString("Nom"),
+                            resultSet.getString("Prenom"),
+                            resultSet.getString("Ecole"),
+                            resultSet.getBoolean("Cotisant"),
+                            resultSet.getString("Statut"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    /**
+     * Cette méthode permet d'ajouter un client dans la base de données
+     * @param client - client à ajouter
+     * @return null
+     */
     @Override
     public Client addClient(Client client) {
+            String query = "INSERT INTO Client(Nom, Prenom, Ecole, Cotisant, Statut) VALUES(?, ?, ?, ?, ?)";
+        try (Connection connection = DataBaseProvider.getdataBase().getConnection();
+             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, client.getNomClient());
+            statement.setString(2, client.getPrenomClient());
+            statement.setString(3, client.getEcoleClient());
+            statement.setBoolean(4, client.isCotisantClient());
+            statement.setString(5, client.getTypeClient());
+            statement.executeUpdate();
+
+            try (ResultSet ids = statement.getGeneratedKeys()) {
+                if(ids.next()) {
+                    int generatedId = ids.getInt(1);
+                    client.setIdClient(generatedId);
+                    return client;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }
