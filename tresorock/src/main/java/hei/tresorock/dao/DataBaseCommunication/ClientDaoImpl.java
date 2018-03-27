@@ -1,4 +1,4 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
 import hei.tresorock.dao.ClientDao;
 import hei.tresorock.entities.Client;

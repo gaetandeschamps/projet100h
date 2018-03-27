@@ -1,8 +1,8 @@
 package hei.tresorock.managers;
 
 import hei.tresorock.dao.ClientDao;
-import hei.tresorock.dao.DataBaseCommunication.ClientDaoImpl;
-import hei.tresorock.dao.DataBaseCommunication.SoireeDaoImpl;
+import hei.tresorock.DAO.DataBaseCommunication.ClientDaoImpl;
+import hei.tresorock.DAO.DataBaseCommunication.SoireeDaoImpl;
 import hei.tresorock.dao.SoireeDao;
 import hei.tresorock.entities.Client;
 
