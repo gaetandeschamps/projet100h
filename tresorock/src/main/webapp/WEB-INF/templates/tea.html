@@ -41,7 +41,7 @@
 				    <!-- ******* MENU 1 ****** -->
 				    <div id="menu1" class="tab-pane fade">
 				    	<h3>MODE TEA - <i>Ajout d'un client "Normal"</i></h3>
-				    	<form>
+				    	<form method="post">
 						  <div class="form-group row">
 						    <label class="col-sm-2 col-form-label">Nom</label>
 						    <div class="col-sm-10">
@@ -74,8 +74,8 @@
 						    </div>
 						  </div>
 						  <center><div id="cotisant" class="text-center">
-						  	<label class="radio-inline"><input type="radio" name="optRadioCotisant">Cotisant</label>
-							<label class="radio-inline"><input type="radio" name="optRadioCotisant">Non Cotisant</label>
+						  	<label class="radio-inline"><input type="radio" name="cotisantClient" value="1">Cotisant</label>
+							<label class="radio-inline"><input type="radio" name="cotisantClient" value="0">Non Cotisant</label>
 						  </div></center>
 						  <div id="couple" class="text-center">
 						  	<label class="radio-inline"><input type="radio" name="optRadioSeulCouple" id="seul" onclick="PrixAPayer();">Seul</label>

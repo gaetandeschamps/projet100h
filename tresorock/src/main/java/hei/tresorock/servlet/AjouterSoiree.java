@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 /**
@@ -58,17 +59,36 @@ public class AjouterSoiree extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // GET PARAMETERS
-        String dateSoireeString = req.getParameter("dateSoiree");
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate dateSoiree = LocalDate.parse(dateSoireeString, dateFormat);
-        Double recetteCaisse = Double.parseDouble(req.getParameter("recetteCaisse"));
-        String theme = req.getParameter("themeSoiree");
+        Integer idSoiree = null;
+        LocalDate dateSoiree = null;
+        Double recetteCaisse = null;
+        Double erreurCaisse = null;
+        String themeSoiree = null;
+        try {
+            idSoiree = Integer.parseInt(req.getParameter("idSoiree"));
+            recetteCaisse = Double.parseDouble(req.getParameter("recetteCaisse"));
+            erreurCaisse = Double.parseDouble(req.getParameter("erreurCaisse"));
+            themeSoiree = req.getParameter("themeSoiree");
 
-        // CREATE Soiree
-        Soiree nouvelleSoiree = new Soiree(null,dateSoiree, recetteCaisse, theme);
-        Soiree createdSoiree = ListeSoiree.getInstance().addSoiree(nouvelleSoiree);
+            String dateSoireeString = req.getParameter("dateSoiree");
+            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            dateSoiree = LocalDate.parse(dateSoireeString, dateFormat);
+        } catch (NumberFormatException | DateTimeParseException ignored) {
 
-        // REDIRECT TO Admin Page
-        resp.sendRedirect(String.format("admin", createdSoiree.getId()));
+        }
+        // CREATE SOIREE
+        Soiree nouvelleSoiree = new Soiree(null, dateSoiree, recetteCaisse, erreurCaisse, themeSoiree);
+        try {
+        //    Soiree soireeCree = ListeSoiree.getInstance().add(nouvelleSoiree);
+
+            // REDIRECT TO ADMIN
+            resp.sendRedirect(String.format("addSoiree"));
+        } catch (IllegalArgumentException e) {
+            String errorMessage = e.getMessage();
+
+            req.getSession().setAttribute("errorMessage", errorMessage);
+
+            resp.sendRedirect("addSoiree");
+        }
     }
 }

@@ -32,6 +32,7 @@ public class SoireeDaoImpl implements SoireeDao {
                                 resultSet.getInt("idSoiree"),
                                 resultSet.getDate("DateSoiree").toLocalDate(),
                                 resultSet.getDouble("RecetteDeCaisse"),
+                                resultSet.getDouble("ErreurDeCaisse"),
                                 resultSet.getString("Theme")
                         )
                 );
@@ -62,6 +63,7 @@ public class SoireeDaoImpl implements SoireeDao {
                             resultSet.getInt("idSoiree"),
                             resultSet.getDate("DateSoiree").toLocalDate(),
                             resultSet.getDouble("RecetteDeCaisse"),
+                            resultSet.getDouble("ErreurDeCaisse"),
                             resultSet.getString("Theme"));
 
                 }

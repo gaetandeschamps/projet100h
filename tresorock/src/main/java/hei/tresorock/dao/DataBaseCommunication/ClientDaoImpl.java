@@ -85,7 +85,7 @@ public class ClientDaoImpl implements ClientDao{
             statement.setString(2, client.getPrenomClient());
             statement.setString(3, client.getEcoleClient());
             statement.setBoolean(4, client.isCotisantClient());
-            statement.setString(5, client.getTypeClient());
+            statement.setString(5, client.getStatutClient());
             statement.executeUpdate();
 
             try (ResultSet ids = statement.getGeneratedKeys()) {

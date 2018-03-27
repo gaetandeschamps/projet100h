@@ -37,5 +37,10 @@ public class ModeTEA extends HttpServlet {
         templateEngine.setTemplateResolver(templateResolver);
 
         templateEngine.process("tea", context, resp.getWriter());
+
+        //accès uniquement si un évènement a été créé côté ADMIN
+
+            //IMPLEMENTER METHODE
+    
     }
 }

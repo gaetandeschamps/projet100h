@@ -1,5 +1,6 @@
 package hei.tresorock.servlet;
 
+import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Soiree;
 import hei.tresorock.managers.ListeSoiree;
 import org.thymeleaf.TemplateEngine;
@@ -43,12 +44,11 @@ public class ModeAdmin extends HttpServlet {
             templateEngine.setTemplateResolver(templateResolver);
 
             templateEngine.process("admin", context, resp.getWriter());
-        }
-        WebContext context = new WebContext(req, resp, req.getServletContext());
 
-        String soireeId = req.getParameter("idSoiree");
-        Soiree soiree = ListeSoiree.getInstance().getSoiree(Integer.parseInt(soireeId));
-        context.setVariable("soiree", soiree);
+            String clientId = req.getParameter("idClient");
+            Client clients = ListeSoiree.getInstance().getClient(Integer.parseInt(clientId));
+            context.setVariable("listeClients", clients);
+        }
 
     }
 }

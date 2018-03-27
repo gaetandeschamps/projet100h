@@ -117,15 +117,15 @@ public class Client {
      * Méthode permettant de récupérer le type de client (normal ou abonné)
      * @return - le statut du client (normal ou abonné)
      */
-    public String getTypeClient() {
+    public String getStatutClient() {
         return statutClient ;
     }
 
     /**
      * Méthode permettant de définir type de client (normal ou abonné)
-     * @param typeClient - normal ou abonné
+     * @param statutClient - normal ou abonné
      */
-    public void setTypeClient(String typeClient) {
+    public void setStatutClient(String statutClient) {
         this.statutClient = statutClient;
     }
 }
