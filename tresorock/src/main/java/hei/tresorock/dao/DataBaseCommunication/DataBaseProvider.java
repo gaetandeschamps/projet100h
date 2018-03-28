@@ -1,9 +1,8 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 import javax.sql.DataSource;
-
 
 public class DataBaseProvider {
 

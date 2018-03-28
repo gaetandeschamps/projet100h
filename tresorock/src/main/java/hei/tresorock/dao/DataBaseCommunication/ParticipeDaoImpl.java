@@ -1,6 +1,7 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
-import hei.tresorock.dao.ParticipeDao;
+import hei.tresorock.DAO.DataBaseCommunication.DataBaseProvider;
+import hei.tresorock.DAO.ParticipeDao;
 import hei.tresorock.entities.Participe;
 import hei.tresorock.entities.Soiree;
 
@@ -42,7 +43,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
         return listOfParticipe;
     }
     /**
-     * Cette méthode retourne un objet Participe correpsondant à l'identifiant unique de la participations, passé en paramètre
+     * Cette méthode retourne un objet Participe correspondant à l'identifiant unique de la participations, passé en paramètre
      *
      * @param idParticipe de la participation recherchée
      * @return null
@@ -74,7 +75,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
 
     /**
      * Cette méthode permet d'ajouter une participation à une soirée dans la base de données
-     * @param participe - participations à ajouter
+     * @param participe - participation à ajouter
      * @return null
      */
 

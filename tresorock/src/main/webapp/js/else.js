@@ -108,6 +108,5 @@ function PrixAPayer(){
  */
 function Valider(){
     // Variable du formulaire : nomClient, prenomClient, ecoleClient, optRadioCotisant,optRadioSeulCouple
-    insertClient(nomClient, prenomClient, ecoleClient, optRadioCotisant, optRadioSeulCouple);
     alert("Merci ! Votre entrée a été enregistrée.");
 };

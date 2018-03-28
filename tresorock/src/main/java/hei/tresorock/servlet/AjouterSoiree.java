@@ -49,7 +49,7 @@ public class AjouterSoiree extends HttpServlet {
     }
 
     /**
-     * Méthode doPost qui permet de soumettre le formulaire et ainsi d'envoyer les donnés.
+     * Méthode doPost qui permet de soumettre le formulaire et ainsi d'envoyer les données.
      * @param req - permet de récuperer les données entrées dans le formulaire
      * @param resp - permet d'envoyer toutes ces données pour créer une nouvelle soirée dans la bdd.
      * @throws ServletException

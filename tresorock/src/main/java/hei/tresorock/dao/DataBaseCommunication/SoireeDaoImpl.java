@@ -1,6 +1,6 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
-import hei.tresorock.dao.SoireeDao;
+import hei.tresorock.DAO.SoireeDao;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Soiree;
 
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class SoireeDaoImpl implements SoireeDao {
     /**
-     * Cette méthode retourne une liste de tous les clients présents dans la BDD dans une structure List
+     * Cette méthode retourne une liste de toutes les soirées dans la BDD dans une structure List
      *
      * @return une List<> d'objets Soiree
      */
