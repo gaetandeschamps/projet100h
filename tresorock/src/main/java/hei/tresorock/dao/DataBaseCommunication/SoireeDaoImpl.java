@@ -1,6 +1,6 @@
 package hei.tresorock.DAO.DataBaseCommunication;
 
-import hei.tresorock.dao.SoireeDao;
+import hei.tresorock.DAO.SoireeDao;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Soiree;
 
