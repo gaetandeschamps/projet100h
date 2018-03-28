@@ -48,6 +48,8 @@ public class ModeAdmin extends HttpServlet {
             String clientId = req.getParameter("idClient");
             Client clients = ListeSoiree.getInstance().getClient(Integer.parseInt(clientId));
             context.setVariable("listeClients", clients);
+        }else {
+            resp.sendRedirect("connexionAdmin");
         }
 
     }

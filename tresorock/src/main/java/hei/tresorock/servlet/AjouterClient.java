@@ -39,11 +39,21 @@ public class AjouterClient extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //on récupère le(s) paramètre(s) mis dans le form
-        String nomClient = req.getParameter("nomClient");
-        String prenomClient = req.getParameter("prenomClient");
-        String ecoleClient = req.getParameter("ecoleClient");
-        Boolean cotisantClient = Boolean.parseBoolean(req.getParameter("cotisantClient"));
-        String statutClient = req.getParameter("statutClient");
+        String nomClient=null;
+        String prenomClient=null;
+        String ecoleClient=null;
+        Boolean cotisantClient=null;
+        String statutClient=null;
+
+        try {
+            nomClient = req.getParameter("nomClient");
+            prenomClient = req.getParameter("prenomClient");
+            ecoleClient = req.getParameter("ecoleClient");
+            cotisantClient = Boolean.parseBoolean(req.getParameter("cotisantClient"));
+            statutClient = req.getParameter("statutClient");
+        }catch(Exception e){
+            log(e.toString());
+        }
 
         try{
             Client newClient = new Client(null,nomClient,prenomClient,ecoleClient,cotisantClient,statutClient);
@@ -51,6 +61,7 @@ public class AjouterClient extends HttpServlet{
         } catch (NumberFormatException | DateTimeParseException ignored) {
 
         }
+
         //création d'un nouveau client
         Client newClient = new Client(null, nomClient, prenomClient, ecoleClient, cotisantClient, statutClient);
         try {
