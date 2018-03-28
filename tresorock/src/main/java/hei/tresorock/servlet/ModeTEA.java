@@ -41,6 +41,6 @@ public class ModeTEA extends HttpServlet {
         //accès uniquement si un évènement a été créé côté ADMIN
 
             //IMPLEMENTER METHODE
-    
+
     }
 }
