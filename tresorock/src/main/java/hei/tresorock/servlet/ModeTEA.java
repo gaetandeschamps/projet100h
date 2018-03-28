@@ -62,7 +62,7 @@ public class ModeTEA extends HttpServlet {
             prenomClient = req.getParameter("prenomClient");
             ecoleClient = req.getParameter("ecoleClient");
             cotisantClient = Boolean.parseBoolean(req.getParameter("cotisantClient"));
-            statutClient = req.getParameter("statutClient");
+            statutClient = req.getParameter("statut");
         }catch(Exception e){
             log(e.toString());
         }

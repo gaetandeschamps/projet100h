@@ -107,6 +107,16 @@ function PrixAPayer(){
  * @constructor
  */
 function Valider(){
-    // Variable du formulaire : nomClient, prenomClient, ecoleClient, optRadioCotisant,optRadioSeulCouple
     alert("Merci ! Votre entrée a été enregistrée.");
 };
+
+/**
+ * Cette méthode permet d'ajuster la valeur du statut du client en fonction du formulaire utilisé
+ */
+function changementName(input){
+    if(input=='normal'){
+        document.getElementById("statutNormal").setAttribute("statut", "normal");
+    }else{
+        document.getElementById("statutNormal").setAttribute("statut", "abonne");
+    }
+}
