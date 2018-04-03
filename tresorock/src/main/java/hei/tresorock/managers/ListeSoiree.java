@@ -1,11 +1,11 @@
 package hei.tresorock.managers;
 
-import hei.tresorock.DAO.ClientDao;
-import hei.tresorock.DAO.DataBaseCommunication.ClientDaoImpl;
-import hei.tresorock.DAO.DataBaseCommunication.ParticipeDaoImpl;
-import hei.tresorock.DAO.DataBaseCommunication.SoireeDaoImpl;
-import hei.tresorock.DAO.ParticipeDao;
-import hei.tresorock.DAO.SoireeDao;
+import hei.tresorock.dao.ClientDao;
+import hei.tresorock.dao.DataBaseCommunication.ClientDaoImpl;
+import hei.tresorock.dao.DataBaseCommunication.ParticipeDaoImpl;
+import hei.tresorock.dao.DataBaseCommunication.SoireeDaoImpl;
+import hei.tresorock.dao.ParticipeDao;
+import hei.tresorock.dao.SoireeDao;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Participe;
 import hei.tresorock.entities.Soiree;
@@ -57,6 +57,36 @@ public class ListeSoiree {
         return soiree;
     }
 
+    //méthodes liées au traitement des informations des clients
+    public List<Client> listClient() {
+        return clientDao.listClient();
+    }
+
+    public Client getClient(Integer idClient) {
+        return clientDao.getClient(idClient);
+    }
+
+    public Client addClient(Client client) {
+        if (client == null) {
+            throw new IllegalArgumentException("The client should not be null.");
+        }
+        if (client.getNomClient() == null || "".equals(client.getNomClient())) {
+            throw new IllegalArgumentException("The client's name should not be empty.");
+        }
+        if (client.getPrenomClient() == null || "".equals(client.getPrenomClient())) {
+            throw new IllegalArgumentException("The client's first name should not be empty.");
+        }
+        if (client.getEcoleClient()== null || "".equals(client.getEcoleClient())) {
+            throw new IllegalArgumentException("The client's school should not be empty.");
+        }
+        if (client.getStatutClient() == null || "".equals(client.getStatutClient())) {
+            throw new IllegalArgumentException("The client's status should not be null or equal to 0.");
+        }
+
+        clientDao.addClient(client);
+        return client;
+    }
+
     //méthodes liées au traitement des informations des participations des clients aux soirées
     public List<Participe> listParticipe() {    return participeDao.listParticipe();    }
 
@@ -106,34 +136,5 @@ public class ListeSoiree {
         return participe;
     }
 
-    //méthodes liées au traitement des informations des clients
-    public List<Client> listClient() {
-        return clientDao.listClient();
-    }
-
-    public Client getClient(Integer idClient) {
-        return clientDao.getClient(idClient);
-    }
-
-    public Client addClient(Client client) {
-        if (client == null) {
-            throw new IllegalArgumentException("The client should not be null.");
-        }
-        if (client.getNomClient() == null || "".equals(client.getNomClient())) {
-            throw new IllegalArgumentException("The client's name should not be empty.");
-        }
-        if (client.getPrenomClient() == null || "".equals(client.getPrenomClient())) {
-            throw new IllegalArgumentException("The client's first name should not be empty.");
-        }
-        if (client.getEcoleClient()== null || "".equals(client.getEcoleClient())) {
-            throw new IllegalArgumentException("The client's school should not be empty.");
-        }
-        if (client.getStatutClient() == null || "".equals(client.getStatutClient())) {
-            throw new IllegalArgumentException("The client's status should not be null or equal to 0.");
-        }
-
-        clientDao.addClient(client);
-        return client;
-    }
 
 }

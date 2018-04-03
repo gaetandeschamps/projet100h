@@ -1,4 +1,4 @@
-package hei.tresorock.DAO.DataBaseCommunication;
+package hei.tresorock.dao.DataBaseCommunication;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 

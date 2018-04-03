@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -52,5 +54,38 @@ public class ModeAdmin extends HttpServlet {
             resp.sendRedirect("connexionAdmin");
         }
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        //on récupère le(s) paramètre(s) mis dans le form
+        LocalDate dateSoiree=null;
+        Double recetteCaisse=null;
+        Double erreurCaisse=null;
+        String themeSoiree=null;
+
+        try {
+            String dateSoireeAsString = req.getParameter("dateSoiree");
+            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            dateSoiree = LocalDate.parse(dateSoireeAsString, dateFormat);
+
+            recetteCaisse = Double.parseDouble(req.getParameter("recetteCaisse"));
+            erreurCaisse = Double.parseDouble(req.getParameter("erreurCaisse"));
+            themeSoiree = req.getParameter("themeSoiree");
+        }catch(Exception e){
+            log(e.toString());
+        }
+
+        //création d'une nouvelle soirée
+        Soiree newSoiree = new Soiree(null,dateSoiree,recetteCaisse,erreurCaisse,themeSoiree);
+        try {
+            ListeSoiree.getInstance().addSoiree(newSoiree);
+        }catch (IllegalArgumentException e){
+            resp.sendRedirect("error");
+            return;
+        }
+        //redirection page préc.
+        resp.sendRedirect(("admin"));
     }
 }

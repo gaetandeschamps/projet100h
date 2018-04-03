@@ -10,7 +10,6 @@ import org.junit.Test;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -62,16 +62,9 @@ public class ModeTEA extends HttpServlet {
             prenomClient = req.getParameter("prenomClient");
             ecoleClient = req.getParameter("ecoleClient");
             cotisantClient = Boolean.parseBoolean(req.getParameter("cotisantClient"));
-            statutClient = req.getParameter("statut");
+            statutClient = req.getParameter("statutClient");
         }catch(Exception e){
             log(e.toString());
-        }
-
-        try{
-            Client newClient = new Client(null,nomClient,prenomClient,ecoleClient,cotisantClient,statutClient);
-            ListeSoiree.getInstance().addClient(newClient);
-        } catch (NumberFormatException | DateTimeParseException ignored) {
-
         }
 
         //création d'un nouveau client
