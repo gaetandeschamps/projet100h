@@ -100,6 +100,7 @@ function PrixAPayer(){
         txt=document.getElementById("montant");
         txt.value="2.00 €";
         }
+    txt.setAttribute("name", "prixPaye");
 };
 
 /**

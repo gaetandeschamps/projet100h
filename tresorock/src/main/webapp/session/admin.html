@@ -82,9 +82,9 @@
 				    <div id="menu2" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
 				    	<p>Pour consulter les soirées passées, merci de cliquer sur la date souhaitée.</p>
-				    	<tr class="custom-select" size="10" th:each="client : ${listeClients}">
+				    	<tr class="custom-select" size="10" th:each="soiree : ${listeSoirees}">
 				    		<!--rajouter lien sur chacune des dates avec boutons modifier/supprimer-->
-							<td th:text="${client.nomClient}"></td>
+							<td th:text="${soiree.date}"></td>
 						</tr>
 					</div>
 
