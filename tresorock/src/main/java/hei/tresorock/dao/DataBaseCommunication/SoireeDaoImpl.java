@@ -18,7 +18,7 @@ public class SoireeDaoImpl implements SoireeDao {
      */
     @Override
     public List<Soiree> listSoiree() {
-        String query = "SELECT * FROM Client ORDER BY Nom";
+        String query = "SELECT * FROM Soiree ORDER BY dateSoiree";
         List<Soiree> listOfSoiree = new ArrayList<>();
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
@@ -87,7 +87,8 @@ public class SoireeDaoImpl implements SoireeDao {
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
             statement.setDate(1,Date.valueOf(soiree.getDateSoiree()));
             statement.setDouble(2, soiree.getRecetteCaisse());
-            statement.setString(3,soiree.getThemeSoiree());
+            statement.setDouble(3, soiree.getErreurCaisse());
+            statement.setString(4,soiree.getThemeSoiree());
             statement.executeUpdate();
 
             try (ResultSet ids = statement.getGeneratedKeys()) {
@@ -100,7 +101,6 @@ public class SoireeDaoImpl implements SoireeDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }

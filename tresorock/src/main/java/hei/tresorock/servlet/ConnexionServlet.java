@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static java.lang.System.out;
+
 /**
  * Classe permettant d'afficher la template Connexion.
  * Cette page permet de se connecter à la partie (et donc à toutes les fonctionnalités d'ADMIN du site via un mot de passe et un login.
@@ -57,7 +59,6 @@ public class ConnexionServlet extends HttpServlet {
         if(login.equals("admin") && password.equals("admin")){
             req.getSession().setAttribute("adminConnecte","login");
         }else{
-
         }
         resp.sendRedirect("session/admin");
     }

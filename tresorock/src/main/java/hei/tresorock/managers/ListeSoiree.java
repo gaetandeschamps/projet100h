@@ -47,9 +47,6 @@ public class ListeSoiree {
         if (soiree.getThemeSoiree() == null) {
             throw new IllegalArgumentException("The soiree's Theme should not be null.");
         }
-        if (soiree.getIdSoiree() == null) {
-            throw new IllegalArgumentException("The soiree's ID should not be null.");
-        }
         if (soiree.getErreurCaisse() == null) {
             throw new IllegalArgumentException("The soiree's erreurCaisse should not be null.");
         }

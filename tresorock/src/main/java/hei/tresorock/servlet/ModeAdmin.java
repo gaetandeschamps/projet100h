@@ -46,12 +46,8 @@ public class ModeAdmin extends HttpServlet {
             templateEngine.setTemplateResolver(templateResolver);
 
             templateEngine.process("admin", context, resp.getWriter());
-
-            String clientId = req.getParameter("idClient");
-            Client clients = ListeSoiree.getInstance().getClient(Integer.parseInt(clientId));
-            context.setVariable("listeClients", clients);
         }else {
-            resp.sendRedirect("connexionAdmin");
+            resp.sendRedirect("connexionEchec");
         }
 
     }
@@ -86,6 +82,6 @@ public class ModeAdmin extends HttpServlet {
             return;
         }
         //redirection page préc.
-        resp.sendRedirect(("admin"));
+        resp.sendRedirect(("/accueil"));
     }
 }
