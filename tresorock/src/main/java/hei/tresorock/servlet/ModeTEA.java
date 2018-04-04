@@ -1,6 +1,7 @@
 package hei.tresorock.servlet;
 
 import hei.tresorock.entities.Client;
+import hei.tresorock.entities.Participe;
 import hei.tresorock.managers.ListeSoiree;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
@@ -56,6 +57,9 @@ public class ModeTEA extends HttpServlet {
         String ecoleClient=null;
         Boolean cotisantClient=null;
         String statutClient=null;
+        Integer idClient=null;
+        Integer idSoiree=null;
+        Double prixPaye=null;
 
         try {
             nomClient = req.getParameter("nomClient");
@@ -63,9 +67,12 @@ public class ModeTEA extends HttpServlet {
             ecoleClient = req.getParameter("ecoleClient");
             cotisantClient = Boolean.parseBoolean(req.getParameter("cotisantClient"));
             statutClient = req.getParameter("statutClient");
+            prixPaye = Double.parseDouble(req.getParameter("prixPaye"));
+
         }catch(Exception e){
             log(e.toString());
         }
+
 
         //création d'un nouveau client
         Client newClient = new Client(null, nomClient, prenomClient, ecoleClient, cotisantClient, statutClient);
@@ -75,7 +82,17 @@ public class ModeTEA extends HttpServlet {
             resp.sendRedirect("error");
             return;
         }
+
+        Participe newParticipe = new Participe(idClient,idSoiree, prixPaye);
+        try {
+            ListeSoiree.getInstance().addParticipe(newParticipe);
+        }catch (IllegalArgumentException e){
+            resp.sendRedirect("error");
+            return;
+        }
         //redirection page préc.
         resp.sendRedirect(("TEA"));
+
+
     }
 }

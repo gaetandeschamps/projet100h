@@ -18,7 +18,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
      */
     @Override
     public List<Participe> listParticipe() {
-        String query = "SELECT * FROM Participe ORDER BY DateSoiree";
+        String query = "SELECT * FROM Participe";
         List<Participe> listOfParticipe = new ArrayList<>();
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
@@ -28,7 +28,6 @@ public class ParticipeDaoImpl implements ParticipeDao {
             while (resultSet.next()) {
                 listOfParticipe.add(
                         new Participe(
-                                resultSet.getInt("idParticipe"),
                                 resultSet.getInt("idSoiree"),
                                 resultSet.getInt("idClient"),
                                 resultSet.getDouble("PrixPaye")
@@ -48,20 +47,17 @@ public class ParticipeDaoImpl implements ParticipeDao {
      */
     @Override
     public Participe getParticipe(Integer idParticipe) {
-        String query = "SELECT * FROM Participe WHERE idParticipe=?";
+        String query = "SELECT * FROM Participe";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
                 PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, idParticipe);
             try (
                     ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Participe(
-                            resultSet.getInt("idParticipation"),
-                            resultSet.getInt("idSoiree"),
                             resultSet.getInt("idClient"),
+                            resultSet.getInt("idSoiree"),
                             resultSet.getDouble("PrixPaye"));
-
                 }
             }
 
@@ -77,10 +73,9 @@ public class ParticipeDaoImpl implements ParticipeDao {
      * @return null
      */
 
-    //VOIR POUR CELLE CI !!!!!!!!!!!!!!
     @Override
     public Participe addParticipe(Participe participe) {
-        String query = "INSERT INTO Participe(idClient, idSoiree, PrixPaye) VALUES (?, ?, ?)";
+            String query = "INSERT INTO Participe(idClient, idSoiree, PrixPaye) VALUES (?,?,?)";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
@@ -89,17 +84,9 @@ public class ParticipeDaoImpl implements ParticipeDao {
             statement.setDouble(3,participe.getPrixPaye());
             statement.executeUpdate();
 
-            try (ResultSet ids = statement.getGeneratedKeys()) {
-                if (ids.next()) {
-                    int generatedId = ids.getInt(1);
-                    participe.setidParticipe(generatedId);
-                    return participe;
-                }
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }

@@ -6,40 +6,22 @@ package hei.tresorock.entities;
  */
 public class Participe {
 
-    private int idParticipe;
-    private int idSoiree;
-    private int idClient;
-    private double prixPaye;
+    private Integer idSoiree;
+    private Integer idClient;
+    private Double prixPaye;
 
     /**
      * Méthode permettant d'accéder aux infos d'un participant.
-     * @param idParticipe - identifiant unique participation
      * @param idSoiree - identifiant unique d'une soirée
      * @param idClient - identifiant unique d'un client
      * @param prixPaye - prix payé par le client/participant
      */
-    public Participe(int idParticipe, int idSoiree, int idClient, double prixPaye) {
-        this.idParticipe = idParticipe;
+    public Participe(int idSoiree, int idClient, double prixPaye) {
         this.idSoiree = idSoiree;
         this.idClient = idClient;
         this.prixPaye = prixPaye;
     }
 
-    /**
-     * Méthode récupérant l'identifiant d'une participation
-     * @return - identifiant participation
-     */
-    public int getidParticipe() {
-        return idParticipe;
-    }
-
-    /**
-     * Méthode permettant de définir l'identifiant d'une participation
-     * @param idParticipe - identifiant unique d'une participation
-     */
-    public void setidParticipe(int idParticipe) {
-        this.idParticipe = idParticipe;
-    }
     /**
      * Méthode récupérant l'identifiant unique d'une soirée.
      * @return - identifiant unique soirée

@@ -98,9 +98,9 @@
 				    	<form method="post">
 				    		<div class="btn-group center-block text-center" role="group" aria-label="Basic example">
 				    		<center>
-							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="Abonné" id="membre">Déjà Membre</button>
-							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="Abonné" id="inscription">Inscription</button>
-							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="Abonné" id="ancienMembre">Ancien Membre Commission</button><br><br>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="membre" id="membre">Déjà Membre</button>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="inscription" id="inscription">Inscription</button>
+							  <button type="button" class="btn btn-secondary" onclick="TypeFormulaireTEA(this);" value="ancienMembre" id="ancienMembre">Ancien Membre Commission</button><br><br>
 							</div>
 							</center>	
 							<div id="formulaireClient" class="center-block text-center"></div>
@@ -147,7 +147,7 @@
 						  <div class="form-group row">
 						    <label class="col-sm-2 col-form-label">Prix à payer</label>
 						    <div class="col-sm-10">
-						      <input type="text" class="form-control" placeholder="0.00 € " id="montant2">
+						      <input type="text" class="form-control" placeholder="0.00 € " id="montant2" name="prixPaye">
 						  </div> 
 						  <div id="valider2" class="center-block text-center">
 									<button type="submit" name="statutClient" value="Abonne" class="btn btn-dark center-block" id="btnValider" onclick="Valider();">Valider</button>

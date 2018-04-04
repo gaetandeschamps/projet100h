@@ -59,6 +59,7 @@ public class ConnexionServlet extends HttpServlet {
         if(login.equals("admin") && password.equals("admin")){
             req.getSession().setAttribute("adminConnecte","login");
         }else{
+
         }
         resp.sendRedirect("session/admin");
     }

@@ -89,45 +89,13 @@ public class ListeSoiree {
 
     public Participe getParticipeDao(Integer idParticipe) { return participeDao.getParticipe(idParticipe);   }
 
-    public Participe addParticipe (Participe participe){
-        /*
-
-    idParticipation int(11) NOT NULL AUTO_INCREMENT,
-    idClient int(11) NOT NULL,
-    idSoiree int(11) NOT NULL,
-    DateSoiree date NOT NULL,
-    Nom char(20) NOT NULL,
-    Prenom char(20) NOT NULL,
-    PrixPaye double NOT NULL,
-
-         */
-
-        /*
-        if (participe==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
+    public Participe addParticipe(Participe participe) {
+        if (participe == null) {
+            throw new IllegalArgumentException("Participe should not be null.");
         }
-        if (participe.getidParticipe() == null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
+        if (participe.getPrixPaye() == 0){
+            throw new IllegalArgumentException("Le prix payé ne doit pas être nul");
         }
-        if (participe.getIdClient()==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        if (participe.getIdSoiree()==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        if (participe.getDateSoiree==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        if (participe.getN==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        if (participe==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        if (participe==null){
-            throw new IllegalArgumentException("La participation du client à la soirée ne doit pas etre null");
-        }
-        */
 
         participeDao.addParticipe(participe);
         return participe;
