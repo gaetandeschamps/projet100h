@@ -1,4 +1,4 @@
-package hei.tresorock.DAO.DataBaseCommunication;
+package hei.tresorock.dao.DataBaseCommunication;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
@@ -13,7 +13,7 @@ public class DataBaseProvider {
             dataBase = new MysqlDataSource();
             dataBase.setServerName("localhost");
             dataBase.setPort(3306);
-            dataBase.setDatabaseName("projet100h");
+            dataBase.setDatabaseName("tresorock");
             dataBase.setUser("root");
             dataBase.setPassword("root");
         }

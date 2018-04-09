@@ -37,7 +37,7 @@
 				    	<h3>MODE ADMIN</h3>
 				    	<p>Pour créer une nouvelle soirée, sélectionner l'onglet dédié.</p>				    	
 				    	<p>Pour consulter la liste des soirées existantes du Rock, sélectionner l'onglet dédié.</p>
-				    	<p>Pour afficher l'historique de toutes les soirées du Rock, sélectionner l'onglet dédié..</p>
+				    	<p>Pour afficher l'historique de toutes les soirées du Rock, sélectionner l'onglet dédié.</p>
 				    </div>
 				    <div id="menu1" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
@@ -82,9 +82,9 @@
 				    <div id="menu2" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
 				    	<p>Pour consulter les soirées passées, merci de cliquer sur la date souhaitée.</p>
-				    	<tr class="custom-select" size="10" th:each="soiree : ${listeSoirees}">
+				    	<tr class="custom-select" size="10" th:each="soiree : ${listeSoiree}">
 				    		<!--rajouter lien sur chacune des dates avec boutons modifier/supprimer-->
-							<td th:text="${soiree.date}"></td>
+							<td th:text="${soiree.dateSoiree}"></td>
 						</tr>
 					</div>
 

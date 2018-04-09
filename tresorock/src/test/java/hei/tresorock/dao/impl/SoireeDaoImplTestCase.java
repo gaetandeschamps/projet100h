@@ -1,8 +1,8 @@
-package hei.tresorock.DAO.impl;
+package hei.tresorock.dao.impl;
 
-import hei.tresorock.DAO.DataBaseCommunication.DataBaseProvider;
-import hei.tresorock.DAO.DataBaseCommunication.SoireeDaoImpl;
-import hei.tresorock.DAO.SoireeDao;
+import hei.tresorock.dao.DataBaseCommunication.DataBaseProvider;
+import hei.tresorock.dao.DataBaseCommunication.SoireeDaoImpl;
+import hei.tresorock.dao.SoireeDao;
 import hei.tresorock.entities.Soiree;
 import org.junit.Before;
 import org.junit.Test;

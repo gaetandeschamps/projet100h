@@ -48,9 +48,9 @@ public class Participe {
 
     /**
      * Méthode permettant de définir l'identifiant d'un client.
-     * @param idClient - identifiant unique client.
+     * @param IdClient - identifiant unique client.
      */
-    public void setIdClient(int idClient) {
+    public void setIdClient(int IdClient) {
         this.idClient = idClient;
     }
 

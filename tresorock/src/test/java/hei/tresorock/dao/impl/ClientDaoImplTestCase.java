@@ -1,8 +1,8 @@
-package hei.tresorock.DAO.impl;
+package hei.tresorock.dao.impl;
 
-import hei.tresorock.DAO.ClientDao;
-import hei.tresorock.DAO.DataBaseCommunication.ClientDaoImpl;
-import hei.tresorock.DAO.DataBaseCommunication.DataBaseProvider;
+import hei.tresorock.dao.ClientDao;
+import hei.tresorock.dao.DataBaseCommunication.ClientDaoImpl;
+import hei.tresorock.dao.DataBaseCommunication.DataBaseProvider;
 import hei.tresorock.entities.Client;
 import org.junit.Before;
 import org.junit.Test;

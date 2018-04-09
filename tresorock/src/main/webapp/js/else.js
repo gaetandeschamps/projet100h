@@ -39,21 +39,21 @@ function TypeFormulaireTEA(button)
     titre = document.getElementById("titreForm");
     titre.innerHTML = "<i>MODE TEA - Formulaire Abonné Membre</i>";
     prix = document.getElementById("montant2");
-    prix.value="0.00 €";
+    prix.value="0.00";
  }
  if(button.value=="inscription")
  {
     titre = document.getElementById("titreForm");
     titre.innerHTML = "<i>MODE TEA - Formulaire d'Inscription Abonné</i>";
     prix = document.getElementById("montant2");
-    prix.value="20.00 €";
+    prix.value="20.00";
  }
  if (button.value=="ancienMembre") 
  {
     titre = document.getElementById("titreForm");
     titre.innerHTML = "<i>MODE TEA - Formulaire Ancien Membre</i>";
     prix = document.getElementById("montant2");
-    prix.value="15.00 €";
+    prix.value="15.00";
  }
  var typeFormulaire=document.getElementById('formulaireClient');
  typeFormulaire.innerHTML=message;
@@ -79,8 +79,14 @@ function ClickSoiree(){
     document.getElementById("suite77").style.display = "block";
 
 };
+
 function OnClick(){
-    alert("Merci, votre évènement est créé.");
+    var x = document.forms["myForm"]["nomClient"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }else{
+    alert("Merci, votre évènement est créé.")};
 };
 
 function NouveauClientNormal(input){
@@ -105,10 +111,10 @@ function PrixAPayer(){
     var txt;
     if(document.getElementById("Couple").checked){
         txt = document.getElementById("montant");
-        txt.value="1.50 €";
+        txt.value="1.50";
         }else if(document.getElementById("seul").checked){
         txt=document.getElementById("montant");
-        txt.value="2.00 €";
+        txt.value="2.00";
         }
     txt.setAttribute("name", "prixPaye");
 };

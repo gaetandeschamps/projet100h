@@ -1,6 +1,6 @@
-package hei.tresorock.DAO.DataBaseCommunication;
+package hei.tresorock.dao.DataBaseCommunication;
 
-import hei.tresorock.DAO.ParticipeDao;
+import hei.tresorock.dao.ParticipeDao;
 import hei.tresorock.entities.Participe;
 
 import java.sql.*;
@@ -28,8 +28,8 @@ public class ParticipeDaoImpl implements ParticipeDao {
             while (resultSet.next()) {
                 listOfParticipe.add(
                         new Participe(
-                                resultSet.getInt("idSoiree"),
-                                resultSet.getInt("idClient"),
+                                resultSet.getInt("IdSoiree"),
+                                resultSet.getInt("IdClient"),
                                 resultSet.getDouble("PrixPaye")
                         )
                 );
@@ -55,8 +55,8 @@ public class ParticipeDaoImpl implements ParticipeDao {
                     ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Participe(
-                            resultSet.getInt("idClient"),
-                            resultSet.getInt("idSoiree"),
+                            resultSet.getInt("IdClient"),
+                            resultSet.getInt("IdSoiree"),
                             resultSet.getDouble("PrixPaye"));
                 }
             }
@@ -75,7 +75,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
 
     @Override
     public Participe addParticipe(Participe participe) {
-            String query = "INSERT INTO Participe(idClient, idSoiree, PrixPaye) VALUES (?,?,?)";
+            String query = "INSERT INTO Participe(IdClient, IdSoiree, PrixPaye) VALUES (?,?,?)";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
@@ -83,6 +83,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
             statement.setInt(2, participe.getIdSoiree());
             statement.setDouble(3,participe.getPrixPaye());
             statement.executeUpdate();
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,7 +95,7 @@ public class ParticipeDaoImpl implements ParticipeDao {
     @Override
     public Double countRecetteTotale(Integer idSoiree){
         Double somme=null;
-        String query = "SELECT SUM(PrixPaye) AS somme FROM Participe WHERE idSoiree=?";
+        String query = "SELECT SUM(PrixPaye) AS somme FROM Participe WHERE IdSoiree=?";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
