@@ -94,6 +94,53 @@
 	padding-top: 4em;
 	padding-bottom: 8em;
 }
+#suite11{
+	display:none;
+	padding-top: 2em;
+	width: 40%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite22{
+	display:none;
+	padding-top: 4em;
+	width: 40%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite33{
+	display:none;
+	padding-top: 4em;
+	width: 40%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite44{
+	display:none;
+	padding-top: 4em;
+	width: 50%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite55{
+	display:none;
+	padding-top: 4em;
+	width: 50%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite66{
+	display:none;
+	padding-top: 4em;
+	width: 70%;
+	margin-left: 9%;
+	font-weight: bold;
+}
+#suite77{
+	display:none;
+	padding-top: 4em;
+	padding-bottom: 8em;
+}
 #span{
 	font-weight: bold;
 }
@@ -101,7 +148,7 @@
 	margin-top: 10px;
 }
 #recetteCaisse{
-	width: 50%;
+	width: 40%;
 }
 #recetteTotale{
 	width: 40%;

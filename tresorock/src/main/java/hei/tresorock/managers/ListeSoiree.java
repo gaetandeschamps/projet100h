@@ -111,5 +111,10 @@ public class ListeSoiree {
         return participe;
     }
 
+    public Double countRecetteTotale(Integer idSoiree){
+        return participeDao.countRecetteTotale(idSoiree);
+
+    }
+
 
 }

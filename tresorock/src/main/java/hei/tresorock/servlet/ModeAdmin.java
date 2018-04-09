@@ -43,6 +43,9 @@ public class ModeAdmin extends HttpServlet {
 
             WebContext context = new WebContext(req, resp, req.getServletContext());
 
+            List<Soiree> soirees = ListeSoiree.getInstance().listSoiree();
+            context.setVariable("soireesList", soirees);
+
             TemplateEngine templateEngine = new TemplateEngine();
             templateEngine.setTemplateResolver(templateResolver);
 

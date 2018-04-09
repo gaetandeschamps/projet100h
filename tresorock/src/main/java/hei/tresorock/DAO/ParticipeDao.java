@@ -11,4 +11,6 @@ public interface ParticipeDao {
         public Participe getParticipe(Integer idParticipe);
 
         public Participe addParticipe (Participe participe);
+
+        Double countRecetteTotale(Integer idSoiree);
 }

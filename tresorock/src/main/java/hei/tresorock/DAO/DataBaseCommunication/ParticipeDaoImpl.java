@@ -89,4 +89,27 @@ public class ParticipeDaoImpl implements ParticipeDao {
         }
         return null;
     }
+
+
+    @Override
+    public Double countRecetteTotale(Integer idSoiree){
+        Double somme=null;
+        String query = "SELECT SUM(PrixPaye) AS somme FROM Participe WHERE idSoiree=?";
+        try (
+                Connection connection = DataBaseProvider.getdataBase().getConnection();
+                PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
+            statement.setInt(1,idSoiree);
+
+            try(
+                    ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    somme = resultSet.getDouble("somme");
+                    return somme;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
