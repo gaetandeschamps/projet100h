@@ -25,7 +25,7 @@ function checkTime(i)
 {
     if (i < 10) 
     {
-        i = "0" + i ;  // ajout d'un zéro devant les nombres < 10
+        i = "0" + i ;   // ajout d'un zéro devant les nombres < 10
     }
     return i;
 };
@@ -39,7 +39,7 @@ function TypeFormulaireTEA(button)
     titre = document.getElementById("titreForm");
     titre.innerHTML = "<i>MODE TEA - Formulaire Abonné Membre</i>";
     prix = document.getElementById("montant2");
-    prix.value="0.00 €";
+    prix.setAttribute("PrixPaye", "0.00 €");
  }
  if(button.value=="inscription")
  {
