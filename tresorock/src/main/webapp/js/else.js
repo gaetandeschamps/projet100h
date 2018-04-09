@@ -39,7 +39,7 @@ function TypeFormulaireTEA(button)
     titre = document.getElementById("titreForm");
     titre.innerHTML = "<i>MODE TEA - Formulaire Abonné Membre</i>";
     prix = document.getElementById("montant2");
-    prix.setAttribute("PrixPaye", "0.00 €");
+    prix.value="0.00 €";
  }
  if(button.value=="inscription")
  {
