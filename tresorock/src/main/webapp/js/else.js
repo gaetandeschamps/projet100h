@@ -69,6 +69,16 @@ function CreerEvenement(){
         document.getElementById("suite7").style.display = "block";
 
 };
+function ClickSoiree(){
+    document.getElementById("suite11").style.display = "block";
+    document.getElementById("suite22").style.display = "block";
+    document.getElementById("suite33").style.display = "block";
+    document.getElementById("suite44").style.display = "block";
+    document.getElementById("suite55").style.display = "block";
+    document.getElementById("suite66").style.display = "block";
+    document.getElementById("suite77").style.display = "block";
+
+};
 function OnClick(){
     alert("Merci, votre évènement est créé.");
 };

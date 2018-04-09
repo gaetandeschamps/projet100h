@@ -73,8 +73,10 @@ public class SoireeDaoImpl implements SoireeDao {
         }
         return null;
     }
+
     /**
      * Cette méthode permet d'ajouter une soiree dans la base de données
+     *
      * @param soiree - soiree à ajouter
      * @return null
      */
@@ -84,11 +86,11 @@ public class SoireeDaoImpl implements SoireeDao {
         String query = "INSERT INTO Soiree(DateSoiree, RecetteDeCaisse, ErreurDeCaisse, Theme) VALUES (?, ?, ?, ?)";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
-                PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
-            statement.setDate(1,Date.valueOf(soiree.getDateSoiree()));
+                PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            statement.setDate(1, Date.valueOf(soiree.getDateSoiree()));
             statement.setDouble(2, soiree.getRecetteCaisse());
             statement.setDouble(3, soiree.getErreurCaisse());
-            statement.setString(4,soiree.getThemeSoiree());
+            statement.setString(4, soiree.getThemeSoiree());
             statement.executeUpdate();
 
             try (ResultSet ids = statement.getGeneratedKeys()) {
@@ -103,4 +105,5 @@ public class SoireeDaoImpl implements SoireeDao {
         }
         return null;
     }
+
 }

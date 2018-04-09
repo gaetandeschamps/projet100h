@@ -73,7 +73,6 @@ public class ModeTEA extends HttpServlet {
             log(e.toString());
         }
 
-
         //création d'un nouveau client
         Client newClient = new Client(null, nomClient, prenomClient, ecoleClient, cotisantClient, statutClient);
         try {
