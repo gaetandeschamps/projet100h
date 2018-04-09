@@ -1,6 +1,6 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
-import hei.tresorock.dao.ParticipeDao;
+import hei.tresorock.DAO.ParticipeDao;
 import hei.tresorock.entities.Participe;
 
 import java.sql.*;

@@ -82,13 +82,10 @@
 				    <div id="menu2" class="tab-pane fade">
 				    	<h3>MODE ADMIN</h3>
 				    	<p>Pour consulter les soirées passées, merci de cliquer sur la date souhaitée.</p>
-						<select name="soiree">
-							<option th:name="soiree" th:each="tournoi : ${tournoiList}" th:value="${tournoi.idTournoi}" th:text="${tournoi.nomTournoi}" id="nomTournoi">Open d'Australie</option>
-						</select>
-						<div class="input-group col-lg-offset-4" style="display: none" id="suite11">
-							<span class="input-group-addon" id="span" for="recetteCaisse">Recette Caisse</span>
-							<input type="number" class="form-control" placeholder="0.00 €" name="recetteCaisse" id="recetteCaisse">
-						</div>
+				    	<tr class="custom-select" size="10" th:each="soiree : ${listeSoirees}">
+				    		<!--rajouter lien sur chacune des dates avec boutons modifier/supprimer-->
+							<td th:text="${soiree.date}"></td>
+						</tr>
 					</div>
 
 				    <div id="menu3" class="tab-pane fade">
