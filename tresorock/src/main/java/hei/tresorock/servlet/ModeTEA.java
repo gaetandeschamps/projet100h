@@ -57,9 +57,12 @@ public class ModeTEA extends HttpServlet {
         String ecoleClient=null;
         Boolean cotisantClient=null;
         String statutClient=null;
+        Double prixPaye=null;
+
+        // paramètres que l'on va retrouver/définir par la suite (idsoiree = id de la soiree active ; idclient =
+        // id du client générée par la BDD)
         Integer idClient=null;
         Integer idSoiree=null;
-        Double prixPaye=null;
 
         try {
             nomClient = req.getParameter("nomClient");
@@ -83,8 +86,17 @@ public class ModeTEA extends HttpServlet {
             return;
         }
 
+        //récupération de l'IdClient du client concerné et de l'IdSoiree de la soirée en cours
+        try {
+            idSoiree = ListeSoiree.getInstance().getSoireeEnCoursId();
+            idClient = ListeSoiree.getInstance().getClientId(newClient);
+        }catch (IllegalArgumentException e){
+            resp.sendRedirect("error");
+        }
+
         Participe newParticipe = new Participe(idClient,idSoiree, prixPaye);
         try {
+            //faire cette méthode à la toute fin, après avoir récupéré le IdSoiree et le IdClient correspondants
             ListeSoiree.getInstance().addParticipe(newParticipe);
         }catch (IllegalArgumentException e){
             resp.sendRedirect("error");

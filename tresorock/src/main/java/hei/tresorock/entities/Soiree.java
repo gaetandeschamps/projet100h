@@ -13,6 +13,7 @@ public class Soiree {
     private Double recetteCaisse;
     private Double erreurCaisse;
     private String  themeSoiree;
+    private Boolean actif;
 
     /**
      * Méthode permettant d'accéder à une soirée
@@ -21,13 +22,14 @@ public class Soiree {
      * @param recetteCaisse - recette de la caisse d'une soirée (comptée par les personnes physiquement présentes).
      * @param themeSoiree - thème spécial (si nécessaire) de la soirée
      */
-    public Soiree(Integer idSoiree, LocalDate dateSoiree, Double recetteCaisse, Double erreurCaisse, String themeSoiree){
+    public Soiree(Integer idSoiree, LocalDate dateSoiree, Double recetteCaisse, Double erreurCaisse, String themeSoiree, Boolean actif){
         super();
         this.idSoiree = idSoiree;
         this.dateSoiree = dateSoiree;
         this.recetteCaisse = recetteCaisse;
         this.erreurCaisse = erreurCaisse;
         this.themeSoiree = themeSoiree;
+        this.actif=actif;
     }
 
     /**
@@ -71,6 +73,12 @@ public class Soiree {
     }
 
     /**
+     * Méthode permettant de définir le thème d'une soirée
+     * @param theme - thème la soirée
+     */
+    public void setThemeSoiree(String theme) { this.themeSoiree=theme; }
+
+    /**
      * Méthode récupérant l'identifiant unique d'une soirée.
      * @return - identifiant de la soirée
      */
@@ -100,5 +108,21 @@ public class Soiree {
      */
     public void setErreurCaisse(Double erreurCaisse) {
         this.erreurCaisse = erreurCaisse;
+    }
+
+    /**
+     * Méthode permettant de récuprérer l'activité d'une soirée
+     * @return True, si la soirée est celle qui est en cours - False, sinon
+     */
+    public Boolean getActif() {
+        return actif;
+    }
+
+    /**
+     * Méthode permettant de définir si la soirée est active ou non
+     * @param actif True, si la soirée est active - False, sinon
+     */
+    public void setActif(Boolean actif) {
+        this.actif = actif;
     }
 }

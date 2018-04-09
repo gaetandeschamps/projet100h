@@ -10,6 +10,8 @@ public interface ClientDao {
 
     public Client getClient(Integer idClient);
 
+    public int getClientId(Client client);
+
     public Client addClient(Client client);
 
 }

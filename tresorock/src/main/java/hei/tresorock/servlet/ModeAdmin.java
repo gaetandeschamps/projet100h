@@ -1,5 +1,6 @@
 package hei.tresorock.servlet;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Soiree;
 import hei.tresorock.managers.ListeSoiree;
@@ -60,6 +61,7 @@ public class ModeAdmin extends HttpServlet {
         Double recetteCaisse=null;
         Double erreurCaisse=null;
         String themeSoiree=null;
+        Boolean actif = true;
 
         try {
             String dateSoireeAsString = req.getParameter("dateSoiree");
@@ -69,19 +71,19 @@ public class ModeAdmin extends HttpServlet {
             recetteCaisse = Double.parseDouble(req.getParameter("recetteCaisse"));
             erreurCaisse = Double.parseDouble(req.getParameter("erreurCaisse"));
             themeSoiree = req.getParameter("themeSoiree");
+
         }catch(Exception e){
             log(e.toString());
         }
 
         //création d'une nouvelle soirée
-        Soiree newSoiree = new Soiree(null,dateSoiree,recetteCaisse,erreurCaisse,themeSoiree);
+        Soiree newSoiree = new Soiree(null,dateSoiree,recetteCaisse,erreurCaisse,themeSoiree, actif);
         try {
             ListeSoiree.getInstance().addSoiree(newSoiree);
         }catch (IllegalArgumentException e){
             resp.sendRedirect("error");
-            return;
         }
         //redirection page préc.
-        resp.sendRedirect(("/accueil"));
+        resp.sendRedirect(("/session/admin"));
     }
 }

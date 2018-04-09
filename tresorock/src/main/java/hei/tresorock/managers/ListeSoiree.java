@@ -1,11 +1,11 @@
 package hei.tresorock.managers;
 
-import hei.tresorock.dao.ClientDao;
-import hei.tresorock.dao.DataBaseCommunication.ClientDaoImpl;
-import hei.tresorock.dao.DataBaseCommunication.ParticipeDaoImpl;
-import hei.tresorock.dao.DataBaseCommunication.SoireeDaoImpl;
-import hei.tresorock.dao.ParticipeDao;
-import hei.tresorock.dao.SoireeDao;
+import hei.tresorock.DAO.ClientDao;
+import hei.tresorock.DAO.DataBaseCommunication.ClientDaoImpl;
+import hei.tresorock.DAO.DataBaseCommunication.ParticipeDaoImpl;
+import hei.tresorock.DAO.DataBaseCommunication.SoireeDaoImpl;
+import hei.tresorock.DAO.ParticipeDao;
+import hei.tresorock.DAO.SoireeDao;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Participe;
 import hei.tresorock.entities.Soiree;
@@ -54,13 +54,23 @@ public class ListeSoiree {
         return soiree;
     }
 
+    public int getSoireeEnCoursId () {
+        return soireeDao.getSoireeEnCoursId();
+    }
+
     //méthodes liées au traitement des informations des clients
     public List<Client> listClient() {
         return clientDao.listClient();
     }
 
+    //récupère un client en connaissant son ID
     public Client getClient(Integer idClient) {
         return clientDao.getClient(idClient);
+    }
+
+    //récupère l'id d'un client en se basant sur son nom, son prenom et son école
+    public int getClientId (Client client){
+        return clientDao.getClientId(client);
     }
 
     public Client addClient(Client client) {

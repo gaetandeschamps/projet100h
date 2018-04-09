@@ -72,6 +72,31 @@ public class ClientDaoImpl implements ClientDao{
     }
 
     /**
+     * Cette méthode permet de récupérer l'ID d'un client en se basant sur son nom, prénom, et école
+     * @param client - dont on cherche l'ID
+     * @return l'IdClient du client passé en paramètre, -1 si erreur
+     */
+    public int getClientId (Client client){
+        int idClient=-1;
+        String query = "SELECT IdClient FROM Client WHERE Nom=? AND Prenom=? AND Ecole=?;";
+        try (Connection connection = DataBaseProvider.getdataBase().getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, client.getNomClient());
+            statement.setString(2, client.getPrenomClient());
+            statement.setString(3, client.getEcoleClient());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    idClient = resultSet.getInt("IdClient");
+                    return idClient;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idClient;
+    }
+
+    /**
      * Cette méthode permet d'ajouter un client dans la base de données
      * @param client - client à ajouter
      * @return null

@@ -19,11 +19,11 @@ INSERT INTO Participe (idParticipation, idClient, idSoiree, DateSoiree, Nom, Pre
 (9,1,4,'2018/01/31', 'Sidonie', 'Frédéric', 2.0),
 (10,4,4,'2018/01/31', 'Eliane', 'Bastien', 0);
 
-INSERT INTO Soiree (idSoiree,DateSoiree, RecetteDeCaisse, ErreurDeCaisse, Theme) VALUES
-(1,'2018/01/10', 23.5, 0, ''),
-(2,'2018/01/17', 4.0, -0.5, ''),
-(3,'2018/01/24', 2.0, 0.25, 'Soiree Deguisement'),
-(4,'2018/01/31', 2.0, 0, '');
+INSERT INTO Soiree (idSoiree,DateSoiree, RecetteDeCaisse, ErreurDeCaisse, Theme, Actif) VALUES
+(1,'2018/01/10', 23.5, 0, '', False),
+(2,'2018/01/17', 4.0, -0.5, '', False),
+(3,'2018/01/24', 2.0, 0.25, 'Soiree Deguisement', False),
+(4,'2018/01/31', 2.0, 0, '', False);
 
 
 
