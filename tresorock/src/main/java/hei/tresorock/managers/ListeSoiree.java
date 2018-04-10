@@ -1,11 +1,11 @@
 package hei.tresorock.managers;
 
-import hei.tresorock.DAO.ClientDao;
-import hei.tresorock.DAO.DataBaseCommunication.ClientDaoImpl;
-import hei.tresorock.DAO.DataBaseCommunication.ParticipeDaoImpl;
-import hei.tresorock.DAO.DataBaseCommunication.SoireeDaoImpl;
-import hei.tresorock.DAO.ParticipeDao;
-import hei.tresorock.DAO.SoireeDao;
+import hei.tresorock.dao.ClientDao;
+import hei.tresorock.dao.DataBaseCommunication.ClientDaoImpl;
+import hei.tresorock.dao.DataBaseCommunication.ParticipeDaoImpl;
+import hei.tresorock.dao.DataBaseCommunication.SoireeDaoImpl;
+import hei.tresorock.dao.ParticipeDao;
+import hei.tresorock.dao.SoireeDao;
 import hei.tresorock.entities.Client;
 import hei.tresorock.entities.Participe;
 import hei.tresorock.entities.Soiree;
