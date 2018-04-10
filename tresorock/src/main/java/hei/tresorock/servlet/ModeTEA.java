@@ -93,7 +93,7 @@ public class ModeTEA extends HttpServlet {
             resp.sendRedirect("error");
         }
 
-        Participe newParticipe = new Participe(idClient,idSoiree, prixPaye);
+        Participe newParticipe = new Participe(idSoiree,idClient, prixPaye);
         try {
             //faire cette méthode à la toute fin, après avoir récupéré le IdSoiree et le IdClient correspondants
             ListeSoiree.getInstance().addParticipe(newParticipe);

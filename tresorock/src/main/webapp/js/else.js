@@ -137,3 +137,25 @@ function changementName(input){
         document.getElementById("statutNormal").setAttribute("statut", "abonne");
     }
 }
+
+/**
+ * Cette requeteAJAX en GET permet d'afficher, si c'est le cas, la soirée qui est en cours
+ */
+/*
+function affichageSoireeEnCours() {
+    var affichageSoireeEnCoursRequest.open("GET", "soireeEnCours", true);
+    affichageSoireeEnCoursRequest.responseType="text";
+
+    affichageSoireeEnCoursRequest.onprogress=function(eventResponse){
+        console.log("Response : " + this.response);
+    }
+
+    affichageSoireeEnCoursRequest.onload = function(eventResponse){
+        console.log("Error : " + this.error);
+    }
+
+    affichageSoireeEnCoursRequest.send();
+
+}
+affichageSoireeEnCours();
+*/
