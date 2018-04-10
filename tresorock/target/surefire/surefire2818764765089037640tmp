@@ -1,0 +1,37 @@
+#surefire
+#Tue Apr 10 15:43:43 CEST 2018
+testClassesDirectory=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/target/test-classes
+classPathUrl.4=/Users/gaetandeschamps/.m2/repository/ognl/ognl/3.1.3/ognl-3.1.3.jar
+classPathUrl.3=/Users/gaetandeschamps/.m2/repository/org/thymeleaf/thymeleaf/3.0.1.RELEASE/thymeleaf-3.0.1.RELEASE.jar
+classPathUrl.2=/Users/gaetandeschamps/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+useManifestOnlyJar=true
+classPathUrl.1=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/target/classes
+reportsDirectory=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/target/surefire-reports
+classPathUrl.0=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/target/test-classes
+providerConfiguration=org.apache.maven.surefire.junit4.JUnit4Provider
+testSuiteDefinitionTestSourceDirectory=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/src/test/java
+surefireClassPathUrl.1=/Users/gaetandeschamps/.m2/repository/org/apache/maven/surefire/surefire-api/2.12.4/surefire-api-2.12.4.jar
+surefireClassPathUrl.0=/Users/gaetandeschamps/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+runOrder=filesystem
+useSystemClassLoader=true
+excludes0=**/*$*
+isTrimStackTrace=true
+tc.1=hei.tresorock.dao.impl.SoireeDaoImplTestCase
+tc.0=hei.tresorock.dao.impl.ClientDaoImplTestCase
+includes2=**/*TestCase.java
+enableAssertions=true
+classPathUrl.14=/Users/gaetandeschamps/.m2/repository/org/assertj/assertj-core/3.8.0/assertj-core-3.8.0.jar
+includes1=**/*Test.java
+failIfNoTests=false
+classPathUrl.13=/Users/gaetandeschamps/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+runStatisticsFile=/Users/gaetandeschamps/Documents/School & Studies/HEI 4/Projet 100h/heroku-tresorock/projet100h/tresorock/.surefire-9372ED039F4CA18B045566CFF33C0E4F604ED765
+includes0=**/Test*.java
+classPathUrl.12=/Users/gaetandeschamps/.m2/repository/junit/junit/4.12/junit-4.12.jar
+classPathUrl.11=/Users/gaetandeschamps/.m2/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar
+classPathUrl.10=/Users/gaetandeschamps/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar
+classPathUrl.9=/Users/gaetandeschamps/.m2/repository/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.0.RELEASE/thymeleaf-extras-java8time-3.0.0.RELEASE.jar
+classPathUrl.8=/Users/gaetandeschamps/.m2/repository/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar
+classPathUrl.7=/Users/gaetandeschamps/.m2/repository/org/unbescape/unbescape/1.1.3.RELEASE/unbescape-1.1.3.RELEASE.jar
+childDelegation=false
+classPathUrl.6=/Users/gaetandeschamps/.m2/repository/org/attoparser/attoparser/2.0.0.RELEASE/attoparser-2.0.0.RELEASE.jar
+classPathUrl.5=/Users/gaetandeschamps/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar
