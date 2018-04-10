@@ -10,16 +10,17 @@ CREATE TABLE Client (
 
 /*Constructeur Table Participe*/
 CREATE TABLE Participe (
-    IdClient int(11) NOT NULL,
     IdSoiree int(11) NOT NULL,
+    IdClient int(11) NOT NULL,
     PrixPaye double NOT NULL,
-    PRIMARY KEY (`IdClient`),
-    CONSTRAINT fk_idClient
+    PRIMARY KEY (IdSoiree, IdClient)
+    );
+    /*CONSTRAINT fk_idClient
         FOREIGN KEY (IdClient)             -- Colonne sur laquelle on crée la clé
         REFERENCES Client(IdClient),
     CONSTRAINT fk_idSoiree
         FOREIGN KEY (idSoiree)
-        REFERENCES Soiree(idSoiree));
+        REFERENCES Soiree(idSoiree));*/
 
 /*Constructeur Table Soiree*/
 CREATE TABLE Soiree (

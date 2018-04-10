@@ -1,6 +1,6 @@
-package hei.tresorock.dao.DataBaseCommunication;
+package hei.tresorock.DAO.DataBaseCommunication;
 
-import hei.tresorock.dao.ParticipeDao;
+import hei.tresorock.DAO.ParticipeDao;
 import hei.tresorock.entities.Participe;
 
 import java.sql.*;
@@ -75,12 +75,12 @@ public class ParticipeDaoImpl implements ParticipeDao {
 
     @Override
     public Participe addParticipe(Participe participe) {
-            String query = "INSERT INTO Participe(IdClient, IdSoiree, PrixPaye) VALUES (?,?,?)";
+            String query = "INSERT INTO Participe(IdSoiree, IdClient, PrixPaye) VALUES (?,?,?)";
         try (
                 Connection connection = DataBaseProvider.getdataBase().getConnection();
                 PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)){
-            statement.setInt(1, participe.getIdClient());
-            statement.setInt(2, participe.getIdSoiree());
+            statement.setInt(1, participe.getIdSoiree());
+            statement.setInt(2, participe.getIdClient());
             statement.setDouble(3,participe.getPrixPaye());
             statement.executeUpdate();
 
